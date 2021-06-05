@@ -20,5 +20,8 @@ module TestguruRailsCourse
     # config.eager_load_paths << Rails.root.join("extras")
     I18n.available_locales = [:en, :ru]
     config.i18n.default_locale = :ru
+
+    config.time_zone = 'Kyiv'
+    config.active_record.default_timezone = :utc
   end
 end
