@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_094105) do
+ActiveRecord::Schema.define(version: 2021_06_09_094618) do
 
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body", null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_094105) do
   end
 
   create_table "tests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
+    t.string "title", default: "New Test"
     t.integer "level", limit: 1
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
