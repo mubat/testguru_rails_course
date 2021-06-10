@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_06_09_095319) do
 
-  create_table "answers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
     t.string "body", default: "New Answer", null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -20,13 +23,13 @@ ActiveRecord::Schema.define(version: 2021_06_09_095319) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "questions", force: :cascade do |t|
     t.string "body", null: false
     t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -34,16 +37,16 @@ ActiveRecord::Schema.define(version: 2021_06_09_095319) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "tests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tests", force: :cascade do |t|
     t.string "title", default: "New Test"
-    t.integer "level", limit: 1
+    t.integer "level", limit: 2
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "login", null: false
     t.string "password", null: false

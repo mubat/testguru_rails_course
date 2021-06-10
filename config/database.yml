@@ -5,8 +5,7 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter: postgresql
   database: test_guru
   username: oleg
   password: 123
