@@ -8,21 +8,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{ title: 'С++ за 21 день' }, { title: 'Ruby с нуля' }, { title: 'Стать гуру в PHP' }])
+categories = Category.create([{ title: 'С++ за 21 день' }, { title: 'Ruby с нуля' }, { title: 'Стать гуру в PHP' }])
 tests = Test.create([
-                      { title: 'Я слишком молод, чтобы умереть', level: 0, category_id: 3 },
-                      { title: 'Эй, не так грубо', level: 1, category_id: 2 },
-                      { title: 'Сделай мне больно', level: 2, category_id: 2 },
-                      { title: 'Сверхнасилие', level: 3, category_id: 1 },
-                      { title: 'Кошмар!', level: 4, category_id: 1 }
+                      { title: 'Я слишком молод, чтобы умереть', level: 0, category_id: categories[3].id },
+                      { title: 'Эй, не так грубо', level: 1, category_id: categories[2].id },
+                      { title: 'Сделай мне больно', level: 2, category_id: categories[2].id },
+                      { title: 'Сверхнасилие', level: 3, category_id: categories[1].id },
+                      { title: 'Кошмар!', level: 4, category_id: categories[1].id }
                     ])
 Question.create([
                   { body: 'как в PHP создать новую переменную с именем animal и строковым значением ‘cat’?',
-                    test_id: 1 },
-                  { body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: 2 },
-                  { body: 'Чем отличается puts от print?', test_id: 3 },
-                  { body: 'Каков размер «пустого» объекта?', test_id: 4 },
-                  { body: 'Допускается ли перегрузка деструкторов?', test_id: 5 }
+                    test_id: tests[1].id },
+                  { body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: tests[2].id },
+                  { body: 'Чем отличается puts от print?', test_id: tests[3].id },
+                  { body: 'Каков размер «пустого» объекта?', test_id: tests[4].id },
+                  { body: 'Допускается ли перегрузка деструкторов?', test_id: tests[5].id }
                 ])
 users = User.create([
                       { name: 'admin', login: 'admin', password: 'admin' },
