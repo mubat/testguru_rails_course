@@ -10,19 +10,19 @@
 
 categories = Category.create([{ title: 'С++ за 21 день' }, { title: 'Ruby с нуля' }, { title: 'Стать гуру в PHP' }])
 tests = Test.create([
-                      { title: 'Я слишком молод, чтобы умереть', level: 0, category_id: categories[3].id },
-                      { title: 'Эй, не так грубо', level: 1, category_id: categories[2].id },
-                      { title: 'Сделай мне больно', level: 2, category_id: categories[2].id },
-                      { title: 'Сверхнасилие', level: 3, category_id: categories[1].id },
-                      { title: 'Кошмар!', level: 4, category_id: categories[1].id }
+                      { title: 'Я слишком молод, чтобы умереть', level: 0, category_id: categories[2].id, },
+                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id },
+                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id },
+                      { title: 'Сверхнасилие', level: 3, category_id: categories[0].id },
+                      { title: 'Кошмар!', level: 4, category_id: categories[0].id }
                     ])
 Question.create([
                   { body: 'как в PHP создать новую переменную с именем animal и строковым значением ‘cat’?',
-                    test_id: tests[1].id },
-                  { body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: tests[2].id },
-                  { body: 'Чем отличается puts от print?', test_id: tests[3].id },
-                  { body: 'Каков размер «пустого» объекта?', test_id: tests[4].id },
-                  { body: 'Допускается ли перегрузка деструкторов?', test_id: tests[5].id }
+                    test_id: tests[0].id },
+                  { body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: tests[1].id },
+                  { body: 'Чем отличается puts от print?', test_id: tests[2].id },
+                  { body: 'Каков размер «пустого» объекта?', test_id: tests[3].id },
+                  { body: 'Допускается ли перегрузка деструкторов?', test_id: tests[4].id }
                 ])
 users = User.create([
                       { name: 'admin', login: 'admin', password: 'admin' },
