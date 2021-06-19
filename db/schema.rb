@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(version: 2021_06_19_161838) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "created_by", null: false
+    t.bigint "created_by_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["created_by_id"], name: "index_tests_on_created_by_id"
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
@@ -64,5 +65,5 @@ ActiveRecord::Schema.define(version: 2021_06_19_161838) do
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
-  add_foreign_key "tests", "users", column: "created_by"
+  add_foreign_key "tests", "users", column: "created_by_id"
 end

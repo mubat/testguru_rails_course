@@ -18,12 +18,12 @@ tests = Test.create([
                         title: 'Я слишком молод, чтобы умереть',
                         level: 0,
                         category_id: categories[2].id,
-                        created_by: users[0].id
+                        created_by_id: users[0].id
                       },
-                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id, created_by: users[1].id },
-                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id, created_by: users[1].id },
-                      { title: 'Сверхнасилие', level: 3, category_id: categories[0].id, created_by: users[1].id },
-                      { title: 'Кошмар!', level: 4, category_id: categories[0].id, created_by: users[1].id }
+                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id, created_by_id: users[1].id },
+                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id, created_by_id: users[1].id },
+                      { title: 'Сверхнасилие', level: 3, category_id: categories[0].id, created_by_id: users[1].id },
+                      { title: 'Кошмар!', level: 4, category_id: categories[0].id, created_by_id: users[1].id }
                     ])
 Question.create([
                   { body: 'как в PHP создать новую переменную с именем animal и строковым значением ‘cat’?',
