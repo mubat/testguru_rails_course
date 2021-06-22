@@ -20,8 +20,10 @@ tests = Test.create([
                         category_id: categories[2].id,
                         created_by_id: users[0].id
                       },
-                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id, created_by_id: users[1].id },
-                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id, created_by_id: users[1].id },
+                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id,
+                        created_by_id: users[1].id },
+                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id,
+                        created_by_id: users[1].id },
                       { title: 'Сверхнасилие', level: 3, category_id: categories[0].id, created_by_id: users[1].id },
                       { title: 'Кошмар!', level: 4, category_id: categories[0].id, created_by_id: users[1].id }
                     ])
@@ -42,22 +44,24 @@ answers = Answer.create([
                           { body: '$animal = cat', question_id: questions[0].id },
                           { body: 'string animal = “cat”;', question_id: questions[0].id },
                           { body: 'var animal = ‘cat’;', question_id: questions[0].id },
-                          { body: '$animal = ‘cat’;', question_id: questions[0].id },
+                          { body: '$animal = ‘cat’;', question_id: questions[0].id, is_correct: true },
 
                           { body: 'lowercase()', question_id: questions[1].id },
                           { body: 'down()', question_id: questions[1].id },
-                          { body: 'downcase()', question_id: questions[1].id },
+                          { body: 'downcase()', question_id: questions[1].id, is_correct: true },
                           { body: 'dcase()', question_id: questions[1].id },
 
                           { body: 'Ничем, оба делают одно и тоже', question_id: questions[2].id },
-                          { body: 'print без пропуска строки, а puts с пропуском', question_id: questions[2].id },
-                          { body: 'puts позволяет выводить переменные, а print только текст', question_id: questions[2].id },
+                          { body: 'print без пропуска строки, а puts с пропуском', question_id: questions[2].id,
+                            is_correct: true },
+                          { body: 'puts позволяет выводить переменные, а print только текст',
+                            question_id: questions[2].id },
 
                           { body: '1 бит', question_id: questions[3].id },
                           { body: '47 байт', question_id: questions[3].id },
-                          { body: '1 байт', question_id: questions[3].id },
+                          { body: '1 байт', question_id: questions[3].id, is_correct: true },
                           { body: 'пустой объект не занимает памяти', question_id: questions[3].id },
 
                           { body: 'Да', question_id: questions[4].id },
-                          { body: 'Нет', question_id: questions[4].id }
+                          { body: 'Нет', question_id: questions[4].id, is_correct: true }
                         ])
