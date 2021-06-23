@@ -8,9 +8,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create([
-                      { name: 'admin', login: 'admin', password: 'admin' },
-                      { name: 'manager1', login: 'manager', password: '123123' },
-                      { name: 'user', login: 'user', password: '123123' }
+                      { name: 'admin', login: 'admin', password: 'admin', email: 'admin@testguru.com' },
+                      { name: 'manager1', login: 'manager', password: '123123', email: 'manager@testguru.com' },
+                      { name: 'user', login: 'user', password: '123123', email: 'user@user.com' }
                     ])
 categories = Category.create([{ title: 'С++ за 21 день' }, { title: 'Ruby с нуля' }, { title: 'Стать гуру в PHP' }])
 tests = Test.create([
