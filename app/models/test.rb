@@ -13,7 +13,7 @@ class Test < ApplicationRecord
   scope :with_level_medium, -> { with_level(LEVEL_MEDIUM) }
   scope :with_level_hard, -> { with_level(LEVEL_HARD) }
 
-  def self.find_by_category(category_name)
-    joins(:category).where(category: { title: category_name }).order(id: :desc).pluck(:title)
-  end
+  scope :find_names_by_category, lambda { |category_name|
+    joins(:category).where(category: { title: category_name }).order(id: :desc).pluck(:title) 
+  }
 end
