@@ -16,4 +16,6 @@ class Test < ApplicationRecord
   scope :find_names_by_category, lambda { |category_name|
     joins(:category).where(category: { title: category_name }).order(id: :desc).pluck(:title) 
   }
+
+  validates :title, :level, presence: true
 end

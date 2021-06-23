@@ -4,4 +4,6 @@ class Answer < ApplicationRecord
   attribute :is_correct, default: false
 
   scope :correct, -> { where(is_correct: true) }
+
+  validates :body, presence: true
 end
