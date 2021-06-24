@@ -1,8 +1,6 @@
 class Answer < ApplicationRecord
   belongs_to :question, inverse_of: :answers
 
-  attribute :is_correct, default: false
-
   scope :correct, -> { where(is_correct: true) }
 
   validates :body, :question, presence: true
