@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_23_161035) do
+ActiveRecord::Schema.define(version: 2021_06_24_111520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_06_23_161035) do
     t.bigint "created_by_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["created_by_id"], name: "index_tests_on_created_by_id"
+    t.index ["title", "level"], name: "uniq_title_level", unique: true
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
