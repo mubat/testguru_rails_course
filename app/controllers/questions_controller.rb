@@ -3,7 +3,13 @@ class QuestionsController < ApplicationController
   before_action :find_test
   before_action :find_question, only: %i[show destroy]
 
-  def index; end
+  def index
+    respond_to do |format|
+      format.html { render layout: false }
+      format.json { render json: { questions: Question.all } }
+      format.xml { render xml: { questions: Question.all } }
+    end
+  end
 
   def show; end
 
