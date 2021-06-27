@@ -1,0 +1,8 @@
+<h1>Добавление нового вопроса</h1>
+<%= form_with model: @question, url: "/tests/#{params[:test_id]}/questions/create", method: :post do |form| %>
+  <p>
+    <%= form.label :body, "Текст" %>
+    <%= form.text_field :body %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>
