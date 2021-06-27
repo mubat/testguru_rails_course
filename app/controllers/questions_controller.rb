@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   before_action :find_test
   before_action :find_question, only: %i[show destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
 
   def index
     respond_to do |format|
@@ -45,5 +46,10 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:tt)
+  end
+
+  def question_not_found
+    flash[:warn] = 'Вопрос не был найден'
+    redirect_to test_questions_path(test_id: params[:test_id])
   end
 end
