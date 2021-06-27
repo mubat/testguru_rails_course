@@ -1,6 +1,6 @@
 <h1>Список вопросов для теста "<%= @test.title %>" (<%= @test.questions.count %>)</h1>
 <ul>
 <% @test.questions.each do |t| %>
-  <li><%= t.body %></li>
+  <li>"<%= t.body %>". <%= link_to('Подробнее', test_question_path(id: t.id)) %></li>
 <% end %>
 </ul>
