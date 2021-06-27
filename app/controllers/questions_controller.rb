@@ -1,12 +1,11 @@
 class QuestionsController < ApplicationController
 
   before_action :find_test
+  before_action :find_question, only: %i[show destroy]
 
   def index; end
 
-  def show
-    @question = Question.find(params[:id])
-  end
+  def show; end
 
   def new
     @question = Question.new # need to generate form
@@ -26,6 +25,10 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def question_params
