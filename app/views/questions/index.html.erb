@@ -1,4 +1,5 @@
 <h1>Список вопросов для теста "<%= @test.title %>" (<%= @test.questions.count %>)</h1>
+<a href="<%= new_test_question_path %>">Добавить новый</a>
 <ul>
 <% @test.questions.each do |t| %>
   <li>"<%= t.body %>". <%= link_to('Подробнее', test_question_path(id: t.id)) %></li>
