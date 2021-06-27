@@ -15,12 +15,11 @@ class QuestionsController < ApplicationController
   def show; end
 
   def new
-    @question = Question.new # need to generate form
+    @question = @test.questions.new # need to generate form
   end
 
   def create
-    @question = Question.new(question_params)
-    @question.test = @test
+    @question = @test.questions.new(question_params)
     if @question.save
       redirect_to test_question_path(id: @question.id, test_id: params[:test_id])
     else
