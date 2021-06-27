@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
+
   before_action :find_test
 
+  def index
+
+  end
 
   private
 

@@ -1,0 +1,6 @@
+<h1>Список вопросов для теста "<%= @test.title %>" (<%= @test.questions.count %>)</h1>
+<ul>
+<% @test.questions.each do |t| %>
+  <li><%= t.body %></li>
+<% end %>
+</ul>
