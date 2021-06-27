@@ -2,16 +2,14 @@ class QuestionsController < ApplicationController
 
   before_action :find_test
 
-  def index
-
-  end
+  def index; end
 
   def show
     @question = Question.find(params[:id])
   end
 
   def new
-    @question = Question.new
+    @question = Question.new # need to generate form
   end
 
   private
