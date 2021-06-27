@@ -21,6 +21,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question.answers.destroy_all
+    @question.delete
+    redirect_to test_questions_path(test_id: params[:test_id])
+  end
+
   private
 
   def find_test
