@@ -49,6 +49,6 @@ class QuestionsController < ApplicationController
 
   def question_not_found
     flash[:warn] = 'Вопрос не был найден'
-    redirect_to test_questions_path(test_id: params[:test_id])
+    redirect_to(request.env['HTTP_REFERER'])
   end
 end
