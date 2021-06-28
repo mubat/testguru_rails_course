@@ -1,0 +1,14 @@
+<h1>Список вопросов для теста "<%= @test.title %>" (<%= @test.questions.count %>)</h1>
+<% flash.each do |level, message| %>
+  <div class="alert alert-<%= level %>" style="margin: 5px; padding: 5px; background-color: #ffc5c5; border: 1px solid #f1a0a0; color: red"><%= message %></div>
+<% end %>
+
+<a href="<%= new_test_question_path %>">Добавить новый</a>
+<ul>
+<% @test.questions.each do |t| %>
+  <li>"<%= t.body %>".
+    <%= link_to('Подробнее', question_path(t)) %>;
+    <%= button_to('Удалить', question_path(t), data: {:confirm => 'Вы уверены?'}, method: :delete) %>
+  </li>
+<% end %>
+</ul>
