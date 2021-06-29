@@ -4,10 +4,4 @@
 <% end %>
 
 <a href="<%= new_test_question_path %>">Добавить новый</a>
-<table>
-  <tr>
-    <th>Вопрос</th>
-    <th colspan="2">Действия</th>
-  </tr>
-  <%= render @test.questions %>
-</table>
+<%= render 'list', elements: @test.questions %>
