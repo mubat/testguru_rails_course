@@ -1,4 +1,4 @@
-<h1>Информация по вопросу <%= @question.body %></h1>
+<% @title = "Информация по вопросу '#{@question.body}'" %>
 <table>
   <tr><td>Поле</td><td>Значение</td></tr>
   <tr><td>body</td><td><%= @question.body %></td></tr>

@@ -1,4 +1,4 @@
-<h1>Добавление нового вопроса</h1>
+<% @title = 'Добавление нового вопроса' %>
 <%= form_with model: @question, url: "/tests/#{params[:test_id]}/questions", method: :post do |form| %>
   <p>
     <%= form.label :body, "Текст" %>
