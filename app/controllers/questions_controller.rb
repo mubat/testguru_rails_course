@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html { render layout: false }
+      format.html { render 'index' }
       format.json { render json: { questions: @test.questions } }
       format.xml { render xml: { questions: @test.questions } }
     end
