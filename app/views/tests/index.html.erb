@@ -1,0 +1,4 @@
+<% @title = "Список теста категории '#{@category.title}'" %>
+<a href="<%= new_category_test_path %>">Добавить новый</a>
+<p>Найдено <%= @category.tests.count %> записей</p>
+<%= render 'list', elements: @category.tests %>
