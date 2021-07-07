@@ -16,5 +16,14 @@
       <div class="alert alert-<%= level %>" style="margin: 5px; padding: 5px; background-color: #ffc5c5; border: 1px solid #f1a0a0; color: red"><%= message %></div>
     <% end %>
     <%= yield %>
+    <footer>
+      <div class="footer-item">Oleh Serhiienko</div>
+      |
+      <div class="footer-item"><a href="https://github.com/mubat" target="_blank">Github.com</a></div>
+      |
+      <div class="footer-item"><%= Date.today.year.to_s %>
+      |
+      <div class="footer-item">Учебный проект в онлайн-школе <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
+    </footer>
   </body>
 </html>
