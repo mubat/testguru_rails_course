@@ -23,8 +23,7 @@ class TestsController < ApplicationController
   def edit; end
 
   def update
-    @test.update(test_params)
-    if @test.save
+    if @test.update(test_params)
       redirect_to test_path(@test)
     else
       @test.errors.full_messages.each { |message| flash[:error] = message }
