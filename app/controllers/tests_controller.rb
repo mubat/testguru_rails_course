@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_category, only: %i[index new create]
-  before_action :find_test, only: %i[show destroy]
+  before_action :find_test, only: %i[show edit update destroy]
 
   def index; end
 
@@ -18,6 +18,18 @@ class TestsController < ApplicationController
     else
       @test.errors.full_messages.each { |message| flash[:error] = message }
       render action: 'new'
+    end
+  end
+
+  def edit; end
+
+  def update
+    @test.update(test_params)
+    if @test.save
+      redirect_to test_path(@test)
+    else
+      @test.errors.full_messages.each { |message| flash[:error] = message }
+      render action: :edit
     end
   end
 

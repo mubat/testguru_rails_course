@@ -1,0 +1,12 @@
+<%= form_with model: model, method: form_method do |form| %>
+  <%= form.hidden_field :category_id %>
+  <p>
+    <%= form.label :title, "Заголовок" %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :level, "Уровень сложности" %>
+    <%= form.text_field :level %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>

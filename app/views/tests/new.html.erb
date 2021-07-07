@@ -1,13 +1,2 @@
 <% @title = 'Добавление нового теста' %>
-<%= form_with model: @test, url: category_tests_path, method: :post do |form| %>
-  <%= form.hidden_field :category_id %>
-  <p>
-    <%= form.label :title, "Заголовок" %>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :level, "Уровень сложности" %>
-    <%= form.text_field :level %>
-  </p>
-  <p><%= form.submit %></p>
-<% end %>
+<%= render 'form', model: [@test.category, @test], form_method: :post %>
