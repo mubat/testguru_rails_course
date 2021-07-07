@@ -1,3 +1,3 @@
 <% @title = test_header(@test) %>
 <%= link_to '<< к списку', tests_path, method: :get %>
-<%= render 'form', model: [@test.category, @test], form_method: :post %>
+<%= render 'form', model: @test %>
