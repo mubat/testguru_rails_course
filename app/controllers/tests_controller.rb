@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_category, only: %i[index new create]
-  before_action :find_test, only: %i[show]
+  before_action :find_test, only: %i[show destroy]
 
   def index; end
 
@@ -19,6 +19,12 @@ class TestsController < ApplicationController
       @test.errors.full_messages.each { |message| flash[:error] = message }
       render action: 'new'
     end
+  end
+
+  def destroy
+    @test.questions.destroy_all
+    @test.delete
+    redirect_to category_tests_path(@test.category)
   end
 
   private
