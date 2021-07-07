@@ -1,4 +1,4 @@
-<% @title = "Информация по вопросу '#{@test.title}'" %>
+<% @title = test_header(@test.title) %>
 <%= link_to '<< к списку', category_tests_path(@test.category), method: :get %>
 <table>
   <tr><td>Поле</td><td>Значение</td></tr>
