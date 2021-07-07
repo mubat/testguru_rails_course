@@ -8,5 +8,11 @@
     <%= form.label :level, "Уровень сложности" %>
     <%= form.text_field :level %>
   </p>
+
+  <p>
+    <%= form.label :created_by_id, "Создан" %>
+    <%= form.collection_select :created_by_id, User.all, :id, :name %>
+
+  </p>
   <p><%= form.submit %></p>
 <% end %>

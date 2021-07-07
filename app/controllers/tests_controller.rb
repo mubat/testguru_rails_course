@@ -12,7 +12,6 @@ class TestsController < ApplicationController
 
   def create
     @test = @category.tests.new(test_params)
-    @test.created_by_id = 1 # TODO need to choose at view form
     if @test.save
       redirect_to test_path(@test)
     else
