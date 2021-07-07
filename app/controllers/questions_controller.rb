@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to test_path(@question)
+      redirect_to question_path(@question)
     else
       @question.errors.full_messages.each { |message| flash[:error] = message }
       render 'edit'
