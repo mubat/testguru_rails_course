@@ -1,4 +1,5 @@
 <% @title = 'Добавление нового вопроса' %>
+<%= link_to '<< к списку', test_questions_path(@test), method: :get %>
 <%= form_with model: @question, url: "/tests/#{params[:test_id]}/questions", method: :post do |form| %>
   <p>
     <%= form.label :body, "Текст" %>
