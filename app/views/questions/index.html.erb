@@ -1,4 +1,4 @@
 <% @title = "Список вопросов для теста '#{@test.title}' (#{@test.questions.count})" %>
-<%= link_to '<< к списку Тестов', category_tests_path(@test.category), method: :get %>
+<%= link_to '<< к списку Тестов', tests_path(@test.category), method: :get %>
 <a href="<%= new_test_question_path %>">Добавить новый</a>
 <%= render 'list', elements: @test.questions %>

@@ -1,17 +1,18 @@
 class TestsController < ApplicationController
-  before_action :find_category, only: %i[index new create]
   before_action :find_test, only: %i[show edit update destroy]
 
-  def index; end
+  def index
+    @tests = Test.all
+  end
 
   def show; end
 
   def new
-    @test = @category.tests.new
+    @test = Test.new
   end
 
   def create
-    @test = @category.tests.new(test_params)
+    @test = Test.new(test_params)
     if @test.save
       redirect_to test_path(@test)
     else
@@ -34,14 +35,10 @@ class TestsController < ApplicationController
   def destroy
     @test.questions.destroy_all
     @test.delete
-    redirect_to category_tests_path(@test.category)
+    redirect_to tests_path(@test)
   end
 
   private
-
-  def find_category
-    @category = Category.find(params[:category_id])
-  end
 
   def find_test
     @test = Test.find(params[:id])
