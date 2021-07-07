@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question)
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
       redirect_to test_path(@question)
     else
       @question.errors.full_messages.each { |message| flash[:error] = message }
-      render :edit
+      render 'edit'
     end
   end
 
