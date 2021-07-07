@@ -16,7 +16,7 @@ class TestsController < ApplicationController
       redirect_to test_path(@test)
     else
       @test.errors.full_messages.each { |message| flash[:error] = message }
-      render action: 'new'
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class TestsController < ApplicationController
       redirect_to test_path(@test)
     else
       @test.errors.full_messages.each { |message| flash[:error] = message }
-      render action: :edit
+      render :edit
     end
   end
 
