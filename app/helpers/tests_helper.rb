@@ -1,5 +1,5 @@
 module TestsHelper
   def test_header(test)
-    test.present? ? "Изменение теста #{@test.title}" : 'Добавление нового теста'
+    test.new_record? ? 'Добавление нового теста' : "Изменение теста #{@test.title}"
   end
 end
