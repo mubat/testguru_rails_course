@@ -10,5 +10,10 @@
 </table>
 
 <h2>Подключённые вопросы</h2>
-<p>Просмотреть список отдельно: <%= link_to 'Сюда', test_questions_path(@test) %></p>
-<%= render 'questions/list', elements: @test.questions %>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan="2">Действия</th>
+  </tr>
+  <%= render @test.questions %>
+</table>

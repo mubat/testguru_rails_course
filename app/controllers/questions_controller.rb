@@ -1,16 +1,8 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[index new create]
+  before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
-
-  def index
-    respond_to do |format|
-      format.html { render 'index' }
-      format.json { render json: { questions: @test.questions } }
-      format.xml { render xml: { questions: @test.questions } }
-    end
-  end
 
   def show; end
 
@@ -41,7 +33,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.answers.destroy_all
     @question.delete
-    redirect_to test_questions_path(@question.test)
+    redirect_to test_path(@question.test)
   end
 
   private
