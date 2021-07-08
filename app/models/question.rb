@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
   belongs_to :test
-  has_many :answers, inverse_of: :question
+  has_many :answers, inverse_of: :question, dependent: :delete_all
 
   validates :body, presence: true
 
