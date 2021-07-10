@@ -25,6 +25,10 @@ class TestPassage < ApplicationRecord
     percent_of_correct >= PERCENT_TO_PASSED
   end
 
+  def current_position
+    test.questions.where('id <= ?', current_question.id).count
+  end
+
   private
 
   def bef_val_set_first_question
