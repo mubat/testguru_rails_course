@@ -1,1 +1,7 @@
 <% @title = "Тест #{@test_passage.test.title} завершён" %>
+<%= link_to '<< К списку тестов', tests_path %>
+
+<div class="test-result test-result-<%= @test_passage.passed? ? 'passed' : 'failed' %>">
+  <div class="test-result-title">Тест <%= @test_passage.passed? ? 'успешно пройден!' : 'пройден неудачно. ' %></div>
+  <div class="test-result-description">Процент прохождения: <%= @test_passage.percent_of_correct %></div>
+</div>
