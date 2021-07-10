@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :find_question, only: %i[index]
+  before_action :find_question, only: %i[index new]
   before_action :set_answer, only: %i[show edit update destroy]
 
   # GET /answers or /answers.json
@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = Answer.new
+    @answer = @question.answers.new
   end
 
   # GET /answers/1/edit
@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect_to @answer
+      redirect_to @answer.question
     else
       render :new
     end

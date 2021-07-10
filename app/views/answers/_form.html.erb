@@ -1,10 +1,10 @@
-<%= form_with(model: answer) do |form| %>
-  <% if answer.errors.any? %>
+<%= form_with model: [@question, @answer] do |form| %>
+  <% if @answer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
 
       <ul>
-        <% answer.errors.each do |error| %>
+        <% @answer.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
