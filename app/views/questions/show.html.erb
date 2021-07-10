@@ -1,5 +1,5 @@
 <% @title = "Информация по вопросу '#{@question.body}'" %>
-<%= link_to '<< к списку', test_path(@question.test), method: :get %>
+<%= link_to '<< к списку', test_path(@question.test) %>
 <table>
   <tr><td>Поле</td><td>Значение</td></tr>
   <tr><td>body</td><td><%= @question.body %></td></tr>
