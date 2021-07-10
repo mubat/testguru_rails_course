@@ -2,6 +2,7 @@
   <td>"<%= test.category.title %>".</td>
   <td>"<%= test.title %>".</td>
   <td>"<%= test.level %>".</td>
+  <td><%= button_to('Запустить', start_test_path(test), method: :post) %></td>
   <td><%= button_to('Подробнее', test_path(test), method: :get) %></td>
   <td><%= button_to('Изменить', edit_test_path(test), method: :get) %></td>
   <td><%= button_to('Удалить', test_path(test), data: {:confirm => 'Вы уверены?'}, method: :delete) %></td>
