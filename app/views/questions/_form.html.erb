@@ -1,0 +1,7 @@
+<%= form_with model: model do |form| %>
+  <p>
+    <%= form.label :body, "Текст" %>
+    <%= form.text_field :body %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>

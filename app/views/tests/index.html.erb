@@ -1,0 +1,12 @@
+<% @title = 'Список тестов' %>
+<a href="<%= new_test_path %>">Добавить новый</a>
+<p>Найдено <%= @tests.count %> записей</p>
+<table>
+  <tr>
+    <th>Категория</th>
+    <th>Заголовок</th>
+    <th>Уровень</th>
+    <th colspan="2">Действия</th>
+  </tr>
+  <%= render @tests %>
+</table>

@@ -1,0 +1,20 @@
+<% @title = "Информация по вопросу '#{@test.title}'" %>
+<%= link_to '<< к списку', tests_path, method: :get %>
+<table>
+  <tr><td>Поле</td><td>Значение</td></tr>
+  <tr><td>Заголовок</td><td><%= @test.title %></td></tr>
+  <tr><td>Раздел</td><td><%= @test.category.title %></td></tr>
+  <tr><td>Уровень</td><td><%= @test.level %></td></tr>
+  <tr><td>created_at</td><td><%= @test.created_at %></td></tr>
+  <tr><td>updated_at</td><td><%= @test.updated_at %></td></tr>
+</table>
+
+<h2>Подключённые вопросы</h2>
+<%= link_to 'Добавить новый', new_test_question_path(@test) %>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan="2">Действия</th>
+  </tr>
+  <%= render @test.questions %>
+</table>

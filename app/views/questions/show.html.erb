@@ -1,4 +1,5 @@
-<h1>Информация по вопросу <%= @question.body %></h1>
+<% @title = "Информация по вопросу '#{@question.body}'" %>
+<%= link_to '<< к списку', test_path(@question.test) %>
 <table>
   <tr><td>Поле</td><td>Значение</td></tr>
   <tr><td>body</td><td><%= @question.body %></td></tr>

@@ -1,10 +1,11 @@
 class Test < ApplicationRecord
+  # TODO: store `created_by` automatically on creation
   LEVEL_LOW = (0..1).freeze
   LEVEL_MEDIUM = (2..4).freeze
   LEVEL_HARD = (5..Float::INFINITY).freeze
 
   belongs_to :category
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_and_belongs_to_many :users
   belongs_to :created_by, class_name: 'User', foreign_key: :created_by_id
 

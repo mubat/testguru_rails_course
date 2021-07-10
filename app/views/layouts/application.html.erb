@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestguruRailsCourse</title>
+    <title><%= @title %> | Testguru</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <% if @title.present? %><h1><%= @title %></h1><% end %>
+    <% flash.each do |level, message| %>
+      <div class="alert alert-<%= level %>" style="margin: 5px; padding: 5px; background-color: #ffc5c5; border: 1px solid #f1a0a0; color: red"><%= message %></div>
+    <% end %>
     <%= yield %>
+    <footer>
+      <div class="footer-item">Oleh Serhiienko</div>
+      |
+      <div class="footer-item"><a href="<%= github_url('mubat', 'testguru_rails_course') %>" target="_blank"></a></div>
+      |
+      <div class="footer-item"><%= current_year %></div>
+      |
+      <div class="footer-item">Учебный проект в онлайн-школе <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
+    </footer>
   </body>
 </html>
