@@ -4,10 +4,10 @@ one:
   user: one
   test: one
   current_question: one
-  correst_questions: 1
+  correct_questions: 1
 
 two:
   user: two
   test: two
   current_question: two
-  correst_questions: 1
+  correct_questions: 1
