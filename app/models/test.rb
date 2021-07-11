@@ -6,7 +6,8 @@ class Test < ApplicationRecord
 
   belongs_to :category
   has_many :questions, dependent: :destroy
-  has_and_belongs_to_many :users
+  has_many :test_passages
+  has_many :users, through: :test_passages
   belongs_to :created_by, class_name: 'User', foreign_key: :created_by_id
 
   scope :with_level, ->(level) { where(level: level) }

@@ -1,0 +1,47 @@
+// Place all the styles related to the test_passages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.test-result {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 5px;
+
+  & div {
+    padding: 20px;
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &-description {
+    font-size: 18px;
+  }
+
+  &-failed {
+    border-color: #fc6a6a;
+    background-color: #ffe3e3;
+    box-shadow: 0 0 7px 7px rgba(252, 106, 106, 0.2);
+
+    .test-result-title {
+      border-bottom: 1px solid #fc6a6a;
+      margin: 0 20px;
+    }
+  }
+
+  &-passed {
+    border-color: #00ee00;
+    background-color: #e8ffe8;
+    box-shadow: 0 0 7px 7px rgba(0, 238, 0, 0.2);
+
+    .test-result-title {
+      border-bottom: 1px solid #00ee00;
+      margin: 0 20px;
+    }
+  }
+}

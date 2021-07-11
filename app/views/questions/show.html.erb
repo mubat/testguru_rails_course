@@ -7,3 +7,9 @@
   <tr><td>created_at</td><td><%= @question.created_at %></td></tr>
   <tr><td>updated_at</td><td><%= @question.updated_at %></td></tr>
 </table>
+<h2>Ответы</h2>
+<%= link_to "Добавить ответ", new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_24_111520) do
+ActiveRecord::Schema.define(version: 2021_07_10_112639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 2021_06_24_111520) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
+  create_table "test_passages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.bigint "current_question_id"
+    t.integer "correct_questions", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
+    t.index ["test_id"], name: "index_test_passages_on_test_id"
+    t.index ["user_id"], name: "index_test_passages_on_user_id"
+  end
+
   create_table "tests", force: :cascade do |t|
     t.string "title", default: "New Test"
     t.integer "level", limit: 2
@@ -48,12 +60,6 @@ ActiveRecord::Schema.define(version: 2021_06_24_111520) do
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["created_by_id"], name: "index_tests_on_created_by_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
-  end
-
-  create_table "tests_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "test_id", null: false
-    t.index ["user_id", "test_id"], name: "index_tests_users_on_user_id_and_test_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +73,8 @@ ActiveRecord::Schema.define(version: 2021_06_24_111520) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "test_passages", "tests"
+  add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "created_by_id"
 end
