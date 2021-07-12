@@ -2,13 +2,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :logged_in?
 
   private
 
   def authenticate_user!
     unless current_user
-      redirect_to login_path
+      redirect_to login_path, alert: 'You need authorize'
     end
   end
 
