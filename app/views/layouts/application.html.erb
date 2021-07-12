@@ -11,7 +11,14 @@
   </head>
 
   <body>
-    <% if @title.present? %><h1><%= @title %></h1><% end %>
+  <div class="header">
+    <% unless controller_name == 'sessions' && action_name == 'new' %>
+      <div class="logout"><%= link_to 'Выйти из профиля', logout_path %></div>
+    <% end %>
+  </div>
+  <div class="content">
+    <% if @title.present? %><h1><%= @title %></h1>
+    <% end %>
     <% flash.each do |level, message| %>
       <div class="alert alert-<%= level %>" style="margin: 5px; padding: 5px; background-color: #ffc5c5; border: 1px solid #f1a0a0; color: red"><%= message %></div>
     <% end %>
@@ -23,7 +30,9 @@
       |
       <div class="footer-item"><%= current_year %></div>
       |
-      <div class="footer-item">Учебный проект в онлайн-школе <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
+      <div class="footer-item">Учебный проект в онлайн-школе
+        <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
     </footer>
+  </div>
   </body>
 </html>
