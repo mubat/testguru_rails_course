@@ -20,7 +20,7 @@
     <% if @title.present? %><h1><%= @title %></h1>
     <% end %>
     <% flash.each do |level, message| %>
-      <div class="alert alert-<%= level %>" style="margin: 5px; padding: 5px; background-color: #ffc5c5; border: 1px solid #f1a0a0; color: red"><%= message %></div>
+      <div class="flash flash-<%= level %>" style=""><%= message %></div>
     <% end %>
     <%= yield %>
     <footer>
