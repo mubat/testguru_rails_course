@@ -12,7 +12,7 @@
 
   <body>
   <div class="header">
-    <% unless controller_name == 'sessions' && action_name == 'new' %>
+    <% unless controller_name == 'sessions' %>
       <div class="logout"><%= link_to 'Выйти из профиля', logout_path %></div>
     <% end %>
   </div>
