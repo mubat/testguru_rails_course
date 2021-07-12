@@ -1,0 +1,16 @@
+<%= form_with moder: @user, local: true do |form| %>
+  <p>
+    <%= form.label :email, "E-Mail" %>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :password, 'Пароль' %>
+    <%= form.text_field :password, id: :password_field %>
+  </p>
+
+  <p>
+    <%= form.label :password_confirmation, 'Пароль' %>
+    <%= form.text_field :password_confirmation, id: :password_confirmation_field %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>
