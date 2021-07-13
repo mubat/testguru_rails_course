@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
+require 'digest/sha1'
+
 class User < ApplicationRecord
+
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :created_by_id
 
-  validates :login, :email, presence: true
+  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  has_secure_password
 
   def find_tests_by_level(level)
     tests.where(level: level)

@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_not_found
-    flash[:warn] = 'Вопрос не был найден'
+    guru_flash 'Вопрос не был найден'
     redirect_to(request.env['HTTP_REFERER'])
   end
 end

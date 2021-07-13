@@ -15,10 +15,5 @@
 
   </p>
 
-  <p>
-    <%= form.label :created_by_id, "Создан" %>
-    <%= form.collection_select :created_by_id, User.all, :id, :name %>
-
-  </p>
   <p><%= form.submit %></p>
 <% end %>
