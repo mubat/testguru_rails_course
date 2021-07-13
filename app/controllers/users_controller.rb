@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tests_path
     else
-      @user.errors.full_messages.each { |message| flash[:error] = message }
+      @user.errors.full_messages.each { |message| guru_flash message }
       render :new
     end
   end
