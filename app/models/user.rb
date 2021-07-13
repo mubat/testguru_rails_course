@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :created_by_id
 
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 
