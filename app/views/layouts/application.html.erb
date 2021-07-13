@@ -12,8 +12,14 @@
 
   <body>
   <div class="header">
-    <% unless controller_name == 'sessions' %>
-      <div class="logout"><%= link_to 'Выйти из профиля', logout_path %></div>
+    <div class="header-item logo"><%= link_to 'TestGuru', root_path %></div>
+    <% if !@current_user.present? %>
+      <ul class="header-item menu">
+        <li><%= link_to 'Зарегистрироваться', signup_path %></li>
+        <li><%= link_to 'Войти', login_path %></li>
+      </ul>
+    <% else %>
+      <div class="header-item logout"><%= link_to 'Выйти из профиля', logout_path %></div>
     <% end %>
   </div>
   <div class="content">
