@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'tests#index'
-
-  get 'users/new'
 
   get :signup, to: 'users#new'
   get :login, to: 'sessions#new'
   get :logout, to: 'sessions#destroy'
 
-  resources :users, only: :create
-  resources :sessions, only: %i[create destroy]
+  resources :users, only: %i[new create]
+  resources :sessions, only: %i[new create destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :tests do
