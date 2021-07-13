@@ -8,9 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    unless current_user
-      redirect_to login_path, alert: 'You need authorize'
-    end
+    cookies[:redirect] = request.path
+    redirect_to login_path, alert: 'You need authorize' unless current_user
   end
 
   def current_user
