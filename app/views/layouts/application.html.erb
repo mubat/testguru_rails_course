@@ -20,6 +20,7 @@
       </ul>
     <% else %>
       <div class="header-item logout"><%= link_to 'Выйти из профиля', logout_path %></div>
+      <div class="header-item user">Добро пожаловать, <%= @current_user.name || @current_user.email %></div>
     <% end %>
   </div>
   <div class="content">
