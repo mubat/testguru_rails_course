@@ -26,9 +26,7 @@
   <div class="content">
     <% if @title.present? %><h1><%= @title %></h1>
     <% end %>
-    <% flash.each do |level, message| %>
-      <div class="flash flash-<%= level %>" style=""><%= message %></div>
-    <% end %>
+    <%= render 'shared/flash' %>
     <%= yield %>
     <footer>
       <div class="footer-item">Oleh Serhiienko</div>
