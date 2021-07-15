@@ -1,0 +1,4 @@
+ru:
+  devise:
+    sessions:
+      signed_in_custom: 'Привет, %{first_name} %{last_name}.'
