@@ -13,22 +13,20 @@
   <body>
   <div class="header">
     <div class="header-item logo"><%= link_to 'TestGuru', root_path %></div>
-    <% if !@current_user.present? %>
-      <ul class="header-item menu">
-        <li><%= link_to 'Зарегистрироваться', signup_path %></li>
-        <li><%= link_to 'Войти', login_path %></li>
-      </ul>
+    <% if user_signed_in? %>
+      <div class="header-item logout"><%= link_to 'Выйти из профиля', destroy_user_session_path, method: :delete %></div>
+      <div class="header-item user">Добро пожаловать, <%= current_user.name || current_user.email %></div>
     <% else %>
-      <div class="header-item logout"><%= link_to 'Выйти из профиля', logout_path %></div>
-      <div class="header-item user">Добро пожаловать, <%= @current_user.name || @current_user.email %></div>
+      <ul class="header-item menu">
+        <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+        <li><%= link_to 'Войти', new_user_session_path %></li>
+      </ul>
     <% end %>
   </div>
   <div class="content">
     <% if @title.present? %><h1><%= @title %></h1>
     <% end %>
-    <% flash.each do |level, message| %>
-      <div class="flash flash-<%= level %>" style=""><%= message %></div>
-    <% end %>
+    <%= render 'shared/flash' %>
     <%= yield %>
     <footer>
       <div class="footer-item">Oleh Serhiienko</div>

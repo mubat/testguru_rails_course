@@ -8,60 +8,76 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create([
-                      { name: 'admin', login: 'admin', password: 'admin', email: 'admin@testguru.com' },
-                      { name: 'manager1', login: 'manager', password: '123123', email: 'manager@testguru.com' },
-                      { name: 'user', login: 'user', password: '123123', email: 'user@user.com' }
+                      {
+                        name: 'admin',
+                        email: 'admin@testguru.com',
+                        password: '123123',
+                        confirmed_at: DateTime.now
+                      },
+                      {
+                        name: 'manager',
+                        email: 'manager@testguru.com',
+                        password: '123123',
+                        confirmed_at: DateTime.now
+                      },
+                      {
+                        "name": 'user',
+                        "email": 'user@testguru.com',
+                        password: '123123',
+                        confirmed_at: DateTime.now
+                      }
                     ])
+
 categories = Category.create([{ title: 'С++ за 21 день' }, { title: 'Ruby с нуля' }, { title: 'Стать гуру в PHP' }])
 tests = Test.create([
                       {
                         title: 'Я слишком молод, чтобы умереть',
                         level: 0,
-                        category_id: categories[2].id,
-                        created_by_id: users[0].id
+                        category: categories[2],
+                        created_by: users[0]
                       },
-                      { title: 'Эй, не так грубо', level: 1, category_id: categories[1].id,
-                        created_by_id: users[1].id },
-                      { title: 'Сделай мне больно', level: 2, category_id: categories[1].id,
-                        created_by_id: users[1].id },
-                      { title: 'Сверхнасилие', level: 3, category_id: categories[0].id, created_by_id: users[1].id },
-                      { title: 'Кошмар!', level: 4, category_id: categories[0].id, created_by_id: users[1].id }
+                      { title: 'Эй, не так грубо', level: 1, category: categories[1],
+                        created_by: users[1] },
+                      { title: 'Сделай мне больно', level: 2, category: categories[1],
+                        created_by: users[1] },
+                      { title: 'Сверхнасилие', level: 3, category: categories[0], created_by: users[1] },
+                      { title: 'Кошмар!', level: 4, category: categories[0], created_by: users[1] }
                     ])
 questions = Question.create([
                               { body: 'как в PHP создать новую переменную с именем animal и строковым значением ‘cat’?',
-                                test_id: tests[0].id },
-                              { body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: tests[1].id },
-                              { body: 'Чем отличается puts от print?', test_id: tests[2].id },
-                              { body: 'Каков размер «пустого» объекта?', test_id: tests[3].id },
-                              { body: 'Допускается ли перегрузка деструкторов?', test_id: tests[4].id }
+                                test: tests[0] },
+                              { body: 'Какой метод позволяет привести строку в нижний регистр?', test: tests[1] },
+                              { body: 'Чем отличается puts от print?', test: tests[2] },
+                              { body: 'Каков размер «пустого» объекта?', test: tests[3] },
+                              { body: 'Допускается ли перегрузка деструкторов?', test: tests[4] }
                             ])
 
 users[2].tests << [tests[0], tests[3], tests[4], tests[3], tests[3], tests[4]]
 users[1].tests << [tests[0], tests[4], tests[2], tests[2]]
 
 answers = Answer.create([
-                          { body: 'animal = ‘cat’;', question_id: questions[0].id },
-                          { body: '$animal = cat', question_id: questions[0].id },
-                          { body: 'string animal = “cat”;', question_id: questions[0].id },
-                          { body: 'var animal = ‘cat’;', question_id: questions[0].id },
-                          { body: '$animal = ‘cat’;', question_id: questions[0].id, is_correct: true },
+                          { body: 'animal = ‘cat’;', question: questions[0] },
+                          { body: '$animal = cat', question: questions[0] },
+                          { body: 'string animal = “cat”;', question: questions[0] },
+                          { body: 'var animal = ‘cat’;', question: questions[0] },
+                          { body: '$animal = ‘cat’;', question: questions[0], is_correct: true },
 
-                          { body: 'lowercase()', question_id: questions[1].id },
-                          { body: 'down()', question_id: questions[1].id },
-                          { body: 'downcase()', question_id: questions[1].id, is_correct: true },
-                          { body: 'dcase()', question_id: questions[1].id },
+                          { body: 'lowercase()', question: questions[1] },
+                          { body: 'down()', question: questions[1] },
+                          { body: 'downcase()', question: questions[1], is_correct: true },
+                          { body: 'dcase()', question: questions[1] },
 
-                          { body: 'Ничем, оба делают одно и тоже', question_id: questions[2].id },
-                          { body: 'print без пропуска строки, а puts с пропуском', question_id: questions[2].id,
+                          { body: 'Ничем, оба делают одно и тоже', question: questions[2] },
+                          { body: 'print без пропуска строки, а puts с пропуском', question: questions[2],
                             is_correct: true },
                           { body: 'puts позволяет выводить переменные, а print только текст',
-                            question_id: questions[2].id },
+                            question: questions[2] },
 
-                          { body: '1 бит', question_id: questions[3].id },
-                          { body: '47 байт', question_id: questions[3].id },
-                          { body: '1 байт', question_id: questions[3].id, is_correct: true },
-                          { body: 'пустой объект не занимает памяти', question_id: questions[3].id },
+                          { body: '1 бит', question: questions[3] },
+                          { body: '47 байт', question: questions[3] },
+                          { body: '1 байт', question: questions[3], is_correct: true },
+                          { body: 'пустой объект не занимает памяти', question: questions[3] },
 
-                          { body: 'Да', question_id: questions[4].id },
-                          { body: 'Нет', question_id: questions[4].id, is_correct: true }
+                          { body: 'Да', question: questions[4] },
+                          { body: 'Нет', question: questions[4], is_correct: true }
                         ])

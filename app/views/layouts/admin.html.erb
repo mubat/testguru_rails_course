@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %> | Панель администратора | Testguru</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<%= render 'admin/nav' %>
+<div class="content">
+  <% if @title.present? %><h1><%= @title %></h1>
+  <% end %>
+  <%= render 'shared/flash' %>
+  <%= yield %>
+  <footer>
+    <div class="footer-item">Oleh Serhiienko</div>
+    |
+    <div class="footer-item"><%= github_url('mubat', 'testguru_rails_course') %></div>
+    |
+    <div class="footer-item"><%= current_year %></div>
+    |
+    <div class="footer-item">Учебный проект в онлайн-школе
+      <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
+  </footer>
+</div>
+</body>
+</html>

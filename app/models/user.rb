@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-require 'digest/sha1'
-
 class User < ApplicationRecord
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
+         :trackable,
+         :confirmable
 
   has_many :test_passages
   has_many :tests, through: :test_passages
@@ -10,13 +15,15 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  has_secure_password
-
   def find_tests_by_level(level)
     tests.where(level: level)
   end
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def admin?
+    type == 'Admin'
   end
 end
