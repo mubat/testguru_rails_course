@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true do
-        # resources :answers, shallow: true, except: :index
+        resources :answers, shallow: true, except: :index
       end
     end
   end
