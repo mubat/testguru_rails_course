@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  before_action :authenticate_user!
+
   helper_method :guru_flash
 
   def guru_flash(message = nil, options = nil)

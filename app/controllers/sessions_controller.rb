@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < Devise::SessionsController
+  skip_before_action :authenticate_user!, only: %i[new create]
+
   # POST /resource/sign_in
   def create
     super
