@@ -1,0 +1,9 @@
+<tr>
+  <td>"<%= test.category.title %>".</td>
+  <td>"<%= test.title %>".</td>
+  <td>"<%= test.level %>".</td>
+  <td><%= button_to('Подробнее', admin_test_path(test), method: :get) %></td>
+  <td><%= button_to('Изменить', edit_admin_test_path(test), method: :get) %></td>
+  <td><%= button_to('Удалить', admin_test_path(test), data: { :confirm => 'Вы уверены?' }, method: :delete) %></td>
+</tr>
+
