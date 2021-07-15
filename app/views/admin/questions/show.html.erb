@@ -8,8 +8,8 @@
   <tr><td>updated_at</td><td><%= @question.updated_at %></td></tr>
 </table>
 <h2>Ответы</h2>
-<%= link_to "Добавить ответ", new_admin_question_answer_path(@question) %>
+<%#= link_to "Добавить ответ", new_admin_question_answer_path(@question) %>
 
 <ol>
-  <%= render @question.answers %>
+  <%#= render partial: 'admin/answers/answer', collection: @question.answers %>
 </ol>

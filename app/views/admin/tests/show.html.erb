@@ -29,11 +29,11 @@
 </table>
 
 <h2>Подключённые вопросы</h2>
-<%= link_to 'Добавить новый', new_test_question_path(@test) %>
+<%= link_to 'Добавить новый', new_admin_test_question_path(@test) %>
 <table>
   <tr>
     <th>Вопрос</th>
     <th colspan="2">Действия</th>
   </tr>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </table>
