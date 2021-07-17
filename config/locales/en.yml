@@ -33,6 +33,8 @@ en:
   sessions:
     signed_in: "Hello %{first_name} %{last_name}."
   helpers:
+    select:
+      prompt: "Choose value"
     submit:
       category:
         create: 'Create'

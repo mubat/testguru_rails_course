@@ -2,6 +2,8 @@ ru:
   sessions:
     signed_in: "Привет, %{first_name} %{last_name}."
   helpers:
+    select:
+      prompt: "Выберите значение"
     submit:
       category:
         create: 'Создать'
