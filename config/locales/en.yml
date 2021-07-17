@@ -30,4 +30,124 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sessions:
+    signed_in: "Hello %{first_name} %{last_name}."
+  helpers:
+    submit:
+      category:
+        create: 'Create'
+        update: 'Save'
+      test:
+        create: 'Create'
+        update: 'Save'
+      question:
+        create: 'Create'
+        update: 'Save'
+    label:
+      test:
+        title: "Title"
+        category_id: "Section"
+        level: "Level"
+      question:
+        body: "Text"
+      answer:
+        body: "Text"
+        is_correct: "Correct?"
+        question_id: "Question"
+  tests:
+    index:
+      title: "Test List"
+      found_count:
+        one: "Found %{count} record"
+        few: "Found %{count} records"
+        other: "Found %{count} records"
+      fields:
+        category: "Category"
+        title: "Title"
+        level: "Level"
+        actions: "Actions"
+    test:
+      run: "Run"
+    new:
+      title: "Adding a new test"
+    edit:
+      title: "Change test %{name}"
+  test_passages:
+    show:
+      title: "Passing test %{title}"
+      queries_count: "Question %{current} from %{max}"
+      continue: "Next"
+    result:
+      title: "Test %{title} completed"
+      to_tests: "To the list of tests"
+      result_passed: "Test passed successfully!"
+      result_failed: "Test failed."
+      result_percent: "Percentage passed: %{percent}"
+  tests_mailer:
+    completed_test:
+      subject: "You passed the test"
+      title: "Hooray! Testing Completed"
+      test_ended: "You have just completed the <b> %{test_title} </b> test."
+      try_more_html: "Maybe we should do some more work? %{link}"
+      link_more: "More tests"
+  layouts:
+    application:
+      welcome: "Welcome, %{user}"
+      logout: "Log out of profile"
+      sign_up: "Register"
+      login: "Login"
+      school_link_html: "Learning project at online school %{link}"
+    admin:
+      admin_panel_title: "Admin Panel"
+  admin:
+    nav:
+      admin_panel: "Admin Panel"
+    answers:
+      edit:
+        title: "Change answer %{name}"
+      new:
+        title: "New Answer"
+    questions:
+      show:
+        answers_title: "Answers"
+        title: "Information on question ' %{name}'"
+    tests:
+      show:
+        questions_title: "Connected Questions"
+        title: "Information on question ' %{name}'"
+        question_name: "Question"
+      index:
+        title: "Test List"
+        found_count:
+          one: "Found %{count} record"
+          few: "Found %{count} records"
+          other: "Found %{count} records"
+  application:
+    confirm_delete: "Are you sure you want to delete the entry?"
+    button:
+      add: "Add"
+      detail: "Details"
+      update: "Change"
+      delete: "Delete"
+      back: "back"
+      view: "View"
+    fields:
+      created_at: "Created date"
+      updated_at: "Date modified"
+      detail_view:
+        name: "Field name"
+        value: "Value"
+  questions:
+    add_answer: "Add answer"
+    new:
+      title: "Adding a new question"
+    edit:
+      title: "Changing data in question %{name}"
+  answers:
+    field_label:
+      body: "Text"
+      is_correct: "Correct?"
+      question: "Question"
+  controllers:
+    question_not_found: "The question was not found"
+    user_denied: "You are not an admin! Nope!"
