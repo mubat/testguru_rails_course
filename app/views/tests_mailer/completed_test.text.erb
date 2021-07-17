@@ -1,5 +1,5 @@
-Ура!
+<%= t '.title' %>
 ====
 
-Вы только что завершили прохождение теста <%= @test.title %>.
-Может стоит ещё потрренироваться? <%= link_to 'Больше тестов', tests_url %>
+<%= t '.test_ended', test_title: @test.title %>
+<%= t '.try_more_html', link: link_to(t('.link_more'), tests_url) %>

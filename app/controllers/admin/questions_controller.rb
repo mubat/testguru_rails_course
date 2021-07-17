@@ -51,7 +51,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def question_not_found
-    guru_flash 'Вопрос не был найден'
+    guru_flash t('controllers.question_not_found')
     redirect_to(request.env['HTTP_REFERER'])
   end
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
 <head>
-  <title><%= @title %> | Панель администратора | Testguru</title>
+  <title><%= @title %> | <%= t '.admin_panel_title' %> | Testguru</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -24,8 +24,7 @@
     |
     <div class="footer-item"><%= current_year %></div>
     |
-    <div class="footer-item">Учебный проект в онлайн-школе
-      <a href="https://thinknetica.com/" target="_blank">Thinknetica</a></div>
+    <div class="footer-item"><%= t 'layouts.application.school_link_html', link: link_to('Thinknetica', 'https://thinknetica.com/', target: '_blank') %></div>
   </footer>
 </div>
 </body>

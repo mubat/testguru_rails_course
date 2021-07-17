@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= t 'answers.field_label.body' %>:</strong>
   <%= @answer.body %>
 </p>
 
 <p>
-  <strong>Is correct:</strong>
+  <strong><%= t 'answers.field_label.is_correct' %>:</strong>
   <%= @answer.is_correct %>
 </p>
 
 <p>
-  <strong>Question:</strong>
+  <strong><%= t 'answers.field_label.question' %>:</strong>
   <%= @answer.question.body %>
 </p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('application.button.update'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('application.button.back'), admin_question_path(@answer.question) %>

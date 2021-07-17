@@ -1,0 +1,115 @@
+ru:
+  sessions:
+    signed_in: "Привет, %{first_name} %{last_name}."
+  helpers:
+    submit:
+      category:
+        create: 'Создать'
+        update: 'Сохранить'
+      test:
+        create: 'Создать'
+        update: 'Сохранить'
+      question:
+        create: 'Создать'
+        update: 'Сохранить'
+    label:
+      test:
+        title: "Заголовок"
+        category_id: "Раздел"
+        level: "Уровень"
+      question:
+        body: "Текст"
+      answer:
+        body: "Текст"
+        is_correct: "Правильный?"
+        question_id: "Вопрос"
+  tests:
+    index:
+      title: "Список тестов"
+      found_count: "Найдено %{count} записей"
+      fields:
+        category: "Категория"
+        title: "Заголовок"
+        level: "Уровень"
+        actions: "Действия"
+    test:
+      run: "Запустить"
+    new:
+      title: "Добавление нового теста"
+    edit:
+      title: "Изменение теста %{name}"
+  test_passages:
+    show:
+      title: "Прохождение теста %{title}"
+      queries_count: "Вопрос %{current} из %{max}"
+      continue: "Дальше"
+    result:
+      title: "Тест %{title} завершён"
+      to_tests: "К списку тестов"
+      result_passed: "Тест успешно пройден!"
+      result_failed: "Тест успешно провален."
+      result_percent: "Процент прохождения: %{percent}"
+  tests_mailer:
+    completed_test:
+      title: "Ура! Тестирование завершено"
+      test_ended: "Вы только что завершили прохождение теста <b>%{test_title}</b>."
+      try_more_html: "Может стоит ещё потрренироваться? %{link}"
+      link_more: "Больше тестов"
+  layouts:
+    application:
+      welcome: "Добро пожаловать, %{user}"
+      logout: "Выйти из профиля"
+      sign_up: "Зарегистрироваться"
+      login: "Войти"
+      school_link_html: "Учебный проект в онлайн-школе %{link}"
+    admin:
+      admin_panel_title: "Панель администратора"
+  admin:
+    nav:
+      admin_panel: "Панель администратора"
+    answers:
+      edit:
+        title: "Изменение ответа %{name}"
+      new:
+        title: "Новый Ответ"
+    questions:
+      show:
+        answers_title: "Ответы"
+        title: "Информация по вопросу '%{name}'"
+    tests:
+      show:
+        questions_title: "Подключённые вопросы"
+        title: "Информация по вопросу '%{name}'"
+        question_name: "Вопрос"
+      index:
+        title: "Список тестов"
+        found_count: "Найдено %{count} записей"
+  application:
+    confirm_delete: "Вы действительно хотите удалить запись?"
+    button:
+      add: "Добавить"
+      detail: "Подробнее"
+      update: "Изменить"
+      delete: "Удалить"
+      back: "Назад"
+      view: "Просмотр"
+    fields:
+      created_at: "Дата создания"
+      updated_at: "Дата изменения"
+      detail_view:
+        name: "Имя поля"
+        value: "Значение"
+  questions:
+    add_answer: "Добавить ответ"
+    new:
+      title: "Добавление нового вопроса"
+    edit:
+      title: "Изменение данных в вопросе %{name}"
+  answers:
+    field_label:
+      body: "Текст"
+      is_correct: "Правильный?"
+      question: "Вопрос"
+  controllers:
+    question_not_found: "Вопрос не был найден"
+    user_denied: "Вы не админ! Низзя!"

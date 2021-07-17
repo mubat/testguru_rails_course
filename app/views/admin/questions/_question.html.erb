@@ -1,7 +1,10 @@
 <tr>
   <td>"<%= question.body %>".</td>
-  <td><%= button_to('Подробнее', admin_question_path(question), method: :get) %></td>
-  <td><%= button_to('Изменить', edit_admin_question_path(question), method: :get) %></td>
-  <td><%= button_to('Удалить', admin_question_path(question), data: { :confirm => 'Вы уверены?' }, method: :delete) %></td>
+  <td><%= button_to(t('application.button.detail'), admin_question_path(question), method: :get) %></td>
+  <td><%= button_to(t('application.button.update'), edit_admin_question_path(question), method: :get) %></td>
+  <td><%= button_to(t('application.button.delete'),
+                    admin_question_path(question),
+                    data: { :confirm => t('application.confirm_delete') },
+                    method: :delete) %></td>
 </tr>
 

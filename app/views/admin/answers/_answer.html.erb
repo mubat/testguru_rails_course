@@ -1,9 +1,9 @@
 <li>
   <%= answer.body %>
-  <%= link_to 'Подробнее', admin_answer_path(answer) %>
-  <%= link_to 'Изменить', edit_admin_answer_path(answer) %>
-  <%= link_to 'Удалить',
+  <%= link_to t('application.button.detail'), admin_answer_path(answer) %>
+  <%= link_to t('application.button.update'), edit_admin_answer_path(answer) %>
+  <%= link_to t('application.button.delete'),
               admin_answer_path(answer),
               method: :delete,
-              data: { confirm: 'Вы действительно хотите удалить запись?' } %>
+              data: { confirm: t('application.confirm_delete') } %>
 </li>
