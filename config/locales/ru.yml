@@ -29,7 +29,7 @@ ru:
       found_count:
         one: "Найдено %{count} запись"
         few: "Найдено %{count} записи"
-        other: "Найдено %{count} записей"
+        many: "Найдено %{count} записей"
       fields:
         category: "Категория"
         title: "Заголовок"
@@ -90,7 +90,7 @@ ru:
         found_count:
           one: "Найдено %{count} запись"
           few: "Найдено %{count} записи"
-          other: "Найдено %{count} записей"
+          many: "Найдено %{count} записей"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:
