@@ -54,6 +54,7 @@ ru:
       result_percent: "Процент прохождения: %{percent}"
   tests_mailer:
     completed_test:
+      subject: "Вы прошли тест"
       title: "Ура! Тестирование завершено"
       test_ended: "Вы только что завершили прохождение теста <b>%{test_title}</b>."
       try_more_html: "Может стоит ещё потрренироваться? %{link}"
