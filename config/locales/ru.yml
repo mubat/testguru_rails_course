@@ -26,7 +26,10 @@ ru:
   tests:
     index:
       title: "Список тестов"
-      found_count: "Найдено %{count} записей"
+      found_count:
+        one: "Найдено %{count} запись"
+        few: "Найдено %{count} записи"
+        other: "Найдено %{count} записей"
       fields:
         category: "Категория"
         title: "Заголовок"
@@ -83,7 +86,10 @@ ru:
         question_name: "Вопрос"
       index:
         title: "Список тестов"
-        found_count: "Найдено %{count} записей"
+        found_count:
+          one: "Найдено %{count} запись"
+          few: "Найдено %{count} записи"
+          other: "Найдено %{count} записей"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:
