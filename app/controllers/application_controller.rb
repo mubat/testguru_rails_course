@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :guru_flash
 
   def default_url_options
-    { land: I18n.locale }
+    I18n.locale != I18n.default_locale ? { lang: I18n.locale } : {}
   end
 
   def guru_flash(message = nil, options = nil)
