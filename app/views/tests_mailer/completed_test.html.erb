@@ -1,3 +1,3 @@
-<h1>Ура!</h1>
-<p>Вы только что завершили прохождение теста <b><%= @test.title %></b>.</p>
-<p>Может стоит ещё потрренироваться? <%= link_to 'Больше тестов', tests_url %></p>
+<h1><%= t '.title' %></h1>
+<p><%= t '.test_ended', test_title: @test.title %></p>
+<p><%= t '.try_more_html', link: link_to(t('.link_more'), tests_url) %></p>

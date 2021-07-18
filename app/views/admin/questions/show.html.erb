@@ -1,14 +1,29 @@
-<% @title = "Информация по вопросу '#{@question.body}'" %>
-<%= link_to '<< к списку', admin_test_path(@question.test) %>
+<% @title = t '.title', name: @question.body %>
+<%= link_to '<< ' + t('application.button.back'), admin_test_path(@question.test) %>
 <table>
-  <tr><td>Поле</td><td>Значение</td></tr>
-  <tr><td>body</td><td><%= @question.body %></td></tr>
-  <tr><td>test.title</td><td><%= @question.test.title %></td></tr>
-  <tr><td>created_at</td><td><%= @question.created_at %></td></tr>
-  <tr><td>updated_at</td><td><%= @question.updated_at %></td></tr>
+  <tr>
+    <td><%= t('application.fields.detail_view.name') %></td>
+    <td><%= t('application.fields.detail_view.value') %></td>
+  </tr>
+  <tr>
+    <td><%= t('questions.field_label.body') %></td>
+    <td><%= @question.body %></td>
+  </tr>
+  <tr>
+    <td><%= t('tests.field_label.title') %></td>
+    <td><%= @question.test.title %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.created_at') %></td>
+    <td><%= @question.created_at %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.updated_at') %></td>
+    <td><%= @question.updated_at %></td>
+  </tr>
 </table>
-<h2>Ответы</h2>
-<%= link_to "Добавить ответ", new_admin_question_answer_path(@question) %>
+<h2><%= t '.answers_title' %></h2>
+<%= link_to t('questions.add_answer'), new_admin_question_answer_path(@question) %>
 
 <ol>
   <%= render partial: 'admin/answers/answer', collection: @question.answers %>

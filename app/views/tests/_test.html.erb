@@ -2,6 +2,6 @@
   <td>"<%= test.category.title %>".</td>
   <td>"<%= test.title %>".</td>
   <td>"<%= test.level %>".</td>
-  <td><%= button_to('Запустить', start_test_path(test), method: :post) %></td>
-  </tr>
+  <td><%= button_to t('tests.test.run'), start_test_path(test), method: :post %></td>
+</tr>
 

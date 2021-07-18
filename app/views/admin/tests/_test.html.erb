@@ -2,8 +2,11 @@
   <td>"<%= test.category.title %>".</td>
   <td>"<%= test.title %>".</td>
   <td>"<%= test.level %>".</td>
-  <td><%= button_to('Подробнее', admin_test_path(test), method: :get) %></td>
-  <td><%= button_to('Изменить', edit_admin_test_path(test), method: :get) %></td>
-  <td><%= button_to('Удалить', admin_test_path(test), data: { :confirm => 'Вы уверены?' }, method: :delete) %></td>
+  <td><%= button_to(t('application.button.detail'), admin_test_path(test), method: :get) %></td>
+  <td><%= button_to(t('application.button.update'), edit_admin_test_path(test), method: :get) %></td>
+  <td><%= button_to(t('application.button.delete'),
+                    admin_test_path(test),
+                    data: { :confirm => t('application.confirm_delete') },
+                    method: :delete) %></td>
 </tr>
 

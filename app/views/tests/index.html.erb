@@ -1,11 +1,11 @@
-<% @title = 'Список тестов' %>
-<p>Найдено <%= @tests.count %> записей</p>
+<% @title = t 'tests.index.title' %>
+<p><%= t 'tests.index.found_count', count: @tests.count %></p>
 <table>
   <tr>
-    <th>Категория</th>
-    <th>Заголовок</th>
-    <th>Уровень</th>
-    <th>Действия</th>
+    <th><%= t 'tests.index.fields.category' %></th>
+    <th><%= t 'tests.index.fields.title' %></th>
+    <th><%= t 'tests.index.fields.level' %></th>
+    <th><%= t 'tests.index.fields.actions' %></th>
   </tr>
   <%= render @tests %>
 </table>

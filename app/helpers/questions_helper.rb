@@ -1,5 +1,5 @@
 module QuestionsHelper
   def question_header(question)
-    question.new_record? ? 'Добавление нового вопроса' : "Изменение данных в вопросе #{question.body}"
+    question.new_record? ? t('questions.new.title') : t('questions.edit.title', name: question.body)
   end
 end
