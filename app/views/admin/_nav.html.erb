@@ -1,8 +1,12 @@
-<div class="navbar navbar-light db-light header">
-  <div class="navbar-brand header-item logo"><%= link_to 'TestGuru', root_path %></div>
-  <div class="header-item admin-panel"><%= t '.admin_panel' %></div>
-  <div class="navbar-text">
-    <div class="header-item logout"><%= link_to t('layouts.application.logout'), destroy_user_session_path, method: :delete %></div>
-    <div class="header-item user"><%= t 'layouts.application.welcome', user: current_user.name || current_user.email %></div>
+<div class="navbar navbar-custom header">
+  <div class="container">
+    <div class="navbar-brand header-item logo"><%= link_to 'TestGuru', root_path %></div>
+    <div class="navbar-text admin-panel"><%= t '.admin_panel' %></div>
+    <div class="navbar-text user"><%= t 'layouts.application.welcome', user: current_user.name || current_user.email %></div>
+    <div id="navbarNav">
+      <div class="navbar-nav">
+        <div class="nav-link header-item logout"><%= link_to t('layouts.application.logout'), destroy_user_session_path, method: :delete %></div>
+      </div>
+    </div>
   </div>
 </div>
