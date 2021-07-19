@@ -1,12 +1,16 @@
 <% @title = t '.title' %>
 <%= link_to t('application.button.add'), new_admin_test_path %>
 <p><%= t '.found_count', count: @tests.count %></p>
-<table>
+<table class="table table-striped">
+  <thead class="table-dark">
   <tr>
     <th><%= t 'helpers.label.test.category_id' %></th>
     <th><%= t 'helpers.label.test.title' %></th>
     <th><%= t 'helpers.label.test.level' %></th>
-    <th colspan="3"><%= t 'tests.index.fields.actions' %></th>
+    <th colspan="3" class="text-center"><%= t 'tests.index.fields.actions' %></th>
   </tr>
+  </thead>
+  <tbody>
   <%= render @tests %>
+  </tbody>
 </table>

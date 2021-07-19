@@ -1,11 +1,15 @@
 <% @title = t 'tests.index.title' %>
 <p><%= t 'tests.index.found_count', count: @tests.count %></p>
-<table>
+<table class="table table-striped">
+  <thead class="table-dark">
   <tr>
     <th><%= t 'helpers.label.test.category_id' %></th>
     <th><%= t 'helpers.label.test.title' %></th>
     <th><%= t 'helpers.label.test.level' %></th>
     <th><%= t 'tests.index.fields.actions' %></th>
   </tr>
+  </thead>
+  <tbody>
   <%= render @tests %>
+  </tbody>
 </table>
