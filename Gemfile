@@ -30,6 +30,9 @@ gem 'rails-i18n'
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
 
+# API
+gem 'faraday'
+
 # UI
 gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 gem 'jquery-rails'
