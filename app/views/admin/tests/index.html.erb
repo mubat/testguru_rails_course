@@ -3,9 +3,9 @@
 <p><%= t '.found_count', count: @tests.count %></p>
 <table>
   <tr>
-    <th><%= t('tests.field_label.category') %></th>
-    <th><%= t('tests.field_label.title') %></th>
-    <th><%= t('tests.field_label.level') %></th>
+    <th><%= t 'helpers.label.test.category_id' %></th>
+    <th><%= t 'helpers.label.test.title' %></th>
+    <th><%= t 'helpers.label.test.level' %></th>
     <th colspan="3"><%= t 'tests.index.fields.actions' %></th>
   </tr>
   <%= render @tests %>
