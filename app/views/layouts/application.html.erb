@@ -14,8 +14,7 @@
   <body>
   <%= render 'shared/nav' %>
   <div class="container content">
-    <% if @title.present? %><h1><%= @title %></h1>
-    <% end %>
+    <%= content_tag(:h1, @title, class: (defined?(@title_center) ? 'text-center' : '')) if @title.present? %>
     <%= render 'shared/flash' %>
     <%= yield %>
     <footer>
