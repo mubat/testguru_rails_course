@@ -1,6 +1,6 @@
 <tr>
-  <td><%= gist.question.body[0..25] %></td>
-  <td><%= link_to gist.url[23..40], gist.url, target: '_blank' %></td>
+  <td><%= gist.question.body.truncate(25, separator: ' ') %></td>
+  <td><%= link_to gist.url.from(23).to(-1), gist.url, target: '_blank' %></td>
   <td><%= gist.user.email %></td>
   <td><%= button_to(t('application.button.detail'), admin_gist_path(gist), method: :get) %></td>
   <td><%= button_to(t('application.button.delete'),
@@ -8,4 +8,3 @@
                     data: { :confirm => t('application.confirm_delete') },
                     method: :delete) %></td>
 </tr>
-
