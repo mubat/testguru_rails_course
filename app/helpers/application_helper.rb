@@ -1,4 +1,10 @@
 module ApplicationHelper
+  ALERT_CATEGORIES = {
+    notice: 'alert-info',
+    error: 'alert-danger',
+    alert: 'alert-danger'
+  }.freeze
+
   def current_year
     Date.today.year.to_s
   end
@@ -8,13 +14,6 @@ module ApplicationHelper
   end
 
   def alert_category(level)
-    case level
-    when 'notice'
-      'alert-info'
-    when 'error'
-      'alert-danger'
-    else
-      'alert-secondary'
-    end
+    ALERT_CATEGORIES[level.to_sym] || 'alert-secondary'
   end
 end
