@@ -88,7 +88,7 @@ en:
       result_percent: "Percentage passed: %{percent}"
     gist:
       failure: "Gist not created"
-      success: "Gist successfully created"
+      success_html: "Gist successfully created %{link}"
   tests_mailer:
     completed_test:
       subject: "You passed the test"

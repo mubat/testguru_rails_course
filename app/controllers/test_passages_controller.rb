@@ -20,13 +20,12 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    flash_options = if result.success?
-                      { notice: t('.success') }
-                    else
-                      { alert: t('.failure') }
-                    end
-
-    redirect_to @test_passage, flash_options
+    if result.key?(:html_url)
+      guru_flash t('.success_html', link: helpers.link_to('Gist', result[:html_url]), target: '_blank'), type: :notice
+    else
+      guru_flash t('.failure')
+    end
+    redirect_to @test_passage
   end
 
   private

@@ -54,7 +54,7 @@ ru:
       result_percent: "Процент прохождения: %{percent}"
     gist:
       failure: "Gist не удалось создать"
-      success: "Gist успешно был создан"
+      success_html: "Gist успешно был создан %{link}"
   tests_mailer:
     completed_test:
       subject: "Вы прошли тест"
