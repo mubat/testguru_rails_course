@@ -2,7 +2,8 @@
 <html>
   <head>
     <title><%= @title %> | Testguru</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,21 +12,9 @@
   </head>
 
   <body>
-  <div class="header">
-    <div class="header-item logo"><%= link_to 'TestGuru', root_path %></div>
-    <% if user_signed_in? %>
-      <div class="header-item logout"><%= link_to t('.logout'), destroy_user_session_path, method: :delete %></div>
-      <div class="header-item user"><%= t '.welcome', user: current_user.name || current_user.email %></div>
-    <% else %>
-      <ul class="header-item menu">
-        <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
-        <li><%= link_to t('.login'), new_user_session_path %></li>
-      </ul>
-    <% end %>
-  </div>
-  <div class="content">
-    <% if @title.present? %><h1><%= @title %></h1>
-    <% end %>
+  <%= render 'shared/nav' %>
+  <div class="container content">
+    <%= content_tag(:h1, @title, class: (defined?(@title_center) ? 'text-center' : '')) if @title.present? %>
     <%= render 'shared/flash' %>
     <%= yield %>
     <footer>

@@ -1,0 +1,39 @@
+<% @title = t('.sign_in')
+   @title_center = true %>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <div class="card border-primary">
+      <div class="card-body">
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <p>
+              <%= f.label :email %><br/>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </p>
+
+            <p>
+              <%= f.label :password %><br/>
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </p>
+
+            <% if devise_mapping.rememberable? %>
+              <p>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </p>
+            <% end %>
+
+            <p>
+              <%= f.submit t('.sign_in') %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mt-1">
+      <%= render "shared/links" %>
+    </div>
+  </div>
+</div>

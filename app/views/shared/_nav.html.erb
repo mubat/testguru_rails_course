@@ -1,0 +1,21 @@
+<div class="navbar navbar-light bg-light header">
+  <div class="container">
+    <div class="navbar-brand header-item logo"><%= link_to 'TestGuru', root_path %></div>
+    <% if user_signed_in? %>
+      <div class="navbar-text user"><%= t 'layouts.application.welcome', user: current_user.first_name %></div>
+    <% end %>
+    <div id="navbarNav">
+      <div class="navbar-nav">
+        <% if current_user && current_user.admin? %>
+          <div class="nav-link"><%= link_to t('admin.nav.admin_panel'), admin_tests_path %></div>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="logout"><%= link_to t('layouts.application.logout'), destroy_user_session_path, method: :delete %></div>
+        <% else %>
+          <div class="logout"><%= link_to t('layouts.application.login'), new_user_session_path %></div>
+          <div class="logout"><%= link_to t('layouts.application.sign_up'), new_user_registration_path %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

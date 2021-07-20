@@ -1,13 +1,11 @@
-.header {
-  background-color: #91c3ff;
-  border-radius: 5px;
-  padding: 15px;
-}
+.navbar {
+  &-custom {
+    background-color: lightblue;
+  }
 
-.header-item {
-  &.admin-panel {
+  .admin-panel {
     color: indianred;
     font-weight: bold;
-    float: right;
+    float: left;
   }
 }

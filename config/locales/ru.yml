@@ -33,9 +33,6 @@ ru:
         few: "Найдено %{count} записи"
         many: "Найдено %{count} записей"
       fields:
-        category: "Категория"
-        title: "Заголовок"
-        level: "Уровень"
         actions: "Действия"
     test:
       run: "Запустить"
