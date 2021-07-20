@@ -1,17 +1,27 @@
 class GistQuestionService
   include ActionView::Helpers::TranslationHelper
 
-  def initialize(question, user, client: nil)
+  def initialize(question, client: nil)
     @question = question
-    @user = user
     @test = @question.test
     @client = client || GithubClient.new
+    @last_response = nil
   end
 
   def call
-    response = @client.create_gist(gist_params)
-    save_gist response, @question
-    response
+    @client.create_gist(gist_params)
+  end
+
+  def response
+    @client.last_response
+  end
+
+  def success?
+    response.status == 201
+  end
+
+  def url
+    response.data[:html_url]
   end
 
   private
@@ -32,10 +42,6 @@ class GistQuestionService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
-  end
-
-  def save_gist(response, question)
-    Gist.create(question: question, url: response[:html_url], user: @user)
   end
 
 end
