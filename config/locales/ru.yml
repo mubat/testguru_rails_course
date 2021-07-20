@@ -45,12 +45,16 @@ ru:
       title: "Прохождение теста %{title}"
       queries_count: "Вопрос %{current} из %{max}"
       continue: "Дальше"
+      save_to_gist: "Сохранить в Gist"
     result:
       title: "Тест %{title} завершён"
       to_tests: "К списку тестов"
       result_passed: "Тест успешно пройден!"
       result_failed: "Тест успешно провален."
       result_percent: "Процент прохождения: %{percent}"
+    gist:
+      failure: "Gist не удалось создать"
+      success: "Gist успешно был создан"
   tests_mailer:
     completed_test:
       subject: "Вы прошли тест"

@@ -79,12 +79,16 @@ en:
       title: "Passing test %{title}"
       queries_count: "Question %{current} from %{max}"
       continue: "Next"
+      save_to_gist: "Save to Gist"
     result:
       title: "Test %{title} completed"
       to_tests: "To the list of tests"
       result_passed: "Test passed successfully!"
       result_failed: "Test failed."
       result_percent: "Percentage passed: %{percent}"
+    gist:
+      failure: "Gist not created"
+      success: "Gist successfully created"
   tests_mailer:
     completed_test:
       subject: "You passed the test"

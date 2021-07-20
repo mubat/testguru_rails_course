@@ -1,6 +1,8 @@
 <% @title = t '.title', title: @test_passage.test.title %>
 
-<b><%= @test_passage.current_question.body %></b>
+<p>
+  <b><%= @test_passage.current_question.body %></b>
+</p>
 
 <p><%= t '.queries_count', current: @test_passage.current_position, max: @test_passage.test.questions.count %></p>
 
@@ -11,6 +13,6 @@
       <%= b.label %>
     </p>
   <% end %>
-
-  <%= form.submit t '.continue' %>
+  <p><%= link_to t('.save_to_gist'), gist_test_passage_path(@test_passage), method: :post %></p>
+  <p><%= form.submit t '.continue' %></p>
 <% end %>
