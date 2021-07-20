@@ -18,7 +18,7 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
+    result = GistQuestionService.new(@test_passage.current_question, current_user).call
 
     if result.key?(:html_url)
       guru_flash t('.success_html', link: helpers.link_to('Gist', result[:html_url]), target: '_blank'), type: :notice
