@@ -32,6 +32,7 @@ gem 'devise-i18n'
 
 # API
 gem 'faraday'
+gem 'octokit', '~> 4.0'
 
 # UI
 gem 'bootstrap', '~> 5.0', '>= 5.0.1'
@@ -69,5 +70,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "net-http"
-gem "pg"
+gem 'net-http'
+gem 'pg'
