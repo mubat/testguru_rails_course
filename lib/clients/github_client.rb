@@ -12,7 +12,6 @@ class GithubClient
   private
 
   def setup_http_client
-    byebug
     Octokit::Client.new(access_token: ENV['GITHUB_ACCESS_TOKEN'])
   end
 end
