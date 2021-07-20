@@ -25,6 +25,10 @@ ru:
         body: "Текст"
         is_correct: "Правильный?"
         question_id: "Вопрос"
+      gist:
+        question_id: "Вопрос"
+        url: "URL"
+        user_id: "Пользователь (email)"
   tests:
     index:
       title: "Список тестов"
@@ -94,6 +98,15 @@ ru:
           one: "Найдено %{count} запись"
           few: "Найдено %{count} записи"
           many: "Найдено %{count} записей"
+    gists:
+      index:
+        title: "Список всех Gist"
+        found_count:
+          one: "Найдено %{count} запись"
+          few: "Найдено %{count} записи"
+          many: "Найдено %{count} записей"
+      show:
+        title: "Информация по Gist '%{name}'"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:

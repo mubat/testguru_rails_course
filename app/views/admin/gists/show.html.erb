@@ -1,0 +1,28 @@
+<% @title = t '.title', name: @gist.question.body[0..25] %>
+<%= link_to '<< ' + t('application.button.back'), admin_gists_path %>
+<table>
+  <tr>
+    <td><%= t('application.fields.detail_view.name') %></td>
+    <td><%= t('application.fields.detail_view.value') %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.gist.question_id') %></td>
+    <td><%= link_to @gist.question.body, admin_question_path(@gist.question) %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.gist.url') %></td>
+    <td><%= link_to @gist.url, @gist.url, target: '_blank' %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.gist.user_id') %></td>
+    <td><%= @gist.user.email %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.created_at') %></td>
+    <td><%= @gist.created_at %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.updated_at') %></td>
+    <td><%= @gist.updated_at %></td>
+  </tr>
+</table>

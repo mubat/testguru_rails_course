@@ -56,6 +56,10 @@ en:
         body: "Text"
         is_correct: "Correct?"
         question_id: "Question"
+      gist:
+        question_id: "Question"
+        url: "URL"
+        user_id: "User (email)"
   tests:
     index:
       title: "Test List"
@@ -128,6 +132,15 @@ en:
           one: "Found %{count} record"
           few: "Found %{count} records"
           other: "Found %{count} records"
+    gists:
+      index:
+        title: "Gits"
+        found_count:
+          one: "Found %{count} record"
+          few: "Found %{count} records"
+          other: "Found %{count} records"
+      show:
+        title: ""
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
     button:
