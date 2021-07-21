@@ -1,3 +1,5 @@
+<%= render 'shared/errors', resource: model %>
+
 <%= form_with model: [:admin, model] do |form| %>
   <%= form.hidden_field :category_id %>
   <p>

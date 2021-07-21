@@ -16,7 +16,6 @@ class Admin::TestsController < Admin::BaseController
     if @test.save
       redirect_to admin_test_path(@test)
     else
-      @test.errors.full_messages.each { |message| flash[:error] = message }
       render 'new'
     end
   end
@@ -27,7 +26,6 @@ class Admin::TestsController < Admin::BaseController
     if @test.update(test_params)
       redirect_to admin_test_path(@test)
     else
-      @test.errors.full_messages.each { |message| flash[:error] = message }
       render 'edit'
     end
   end
@@ -46,7 +44,6 @@ class Admin::TestsController < Admin::BaseController
     if @test.update(test_params)
       redirect_to admin_tests_path
     else
-      @test.errors.full_messages.each { |message| flash[:error] = message }
       render :index
     end
   end
