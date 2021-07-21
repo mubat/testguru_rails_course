@@ -21,7 +21,7 @@ class TestPassagesController < ApplicationController
     gist_service = GistQuestionService.new(@test_passage.current_question)
     gist_service.call
     if gist_service.success?
-      Gist.create(question: @test_passage.current_question, url: gist_service.url, user: current_user)
+      current_user.gists.create(question: @test_passage.current_question, url: gist_service.url)
       guru_flash t('.success_html', link: helpers.link_to('Gist', gist_service.url), target: '_blank'), type: :notice
     else
       guru_flash t('.failure')
