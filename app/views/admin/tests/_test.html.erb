@@ -1,7 +1,10 @@
 <tr>
-  <td>"<%= test.category.title %>".</td>
-  <td>"<%= test.title %>".</td>
-  <td>"<%= test.level %>".</td>
+  <td><%= test.category.title %></td>
+  <td>
+    <%= test.title %>
+    <%= render 'form_inline', test: test  == @test ? @test : test %>
+  </td>
+  <td><%= test.level %></td>
   <td><%= button_to(t('application.button.detail'), admin_test_path(test), method: :get) %></td>
   <td><%= button_to(t('application.button.update'), edit_admin_test_path(test), method: :get) %></td>
   <td><%= button_to(t('application.button.delete'),

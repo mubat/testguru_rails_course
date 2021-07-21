@@ -98,6 +98,8 @@ ru:
           one: "Найдено %{count} запись"
           few: "Найдено %{count} записи"
           many: "Найдено %{count} записей"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         title: "Список всех Gist"
