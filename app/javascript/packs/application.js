@@ -17,3 +17,4 @@ ActiveStorage.start()
 
 import 'utilities/sorting'
 import 'utilities/validate_password'
+import 'utilities/form_inline'
