@@ -37,6 +37,7 @@ gem 'octokit', '~> 4.0'
 # UI
 gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
