@@ -25,6 +25,10 @@ ru:
         body: "Текст"
         is_correct: "Правильный?"
         question_id: "Вопрос"
+      gist:
+        question_id: "Вопрос"
+        url: "URL"
+        user_id: "Пользователь (email)"
   tests:
     index:
       title: "Список тестов"
@@ -45,12 +49,16 @@ ru:
       title: "Прохождение теста %{title}"
       queries_count: "Вопрос %{current} из %{max}"
       continue: "Дальше"
+      save_to_gist: "Сохранить в Gist"
     result:
       title: "Тест %{title} завершён"
       to_tests: "К списку тестов"
       result_passed: "Тест успешно пройден!"
       result_failed: "Тест успешно провален."
       result_percent: "Процент прохождения: %{percent}"
+    gist:
+      failure: "Gist не удалось создать"
+      success_html: "Gist успешно был создан %{link}"
   tests_mailer:
     completed_test:
       subject: "Вы прошли тест"
@@ -90,6 +98,15 @@ ru:
           one: "Найдено %{count} запись"
           few: "Найдено %{count} записи"
           many: "Найдено %{count} записей"
+    gists:
+      index:
+        title: "Список всех Gist"
+        found_count:
+          one: "Найдено %{count} запись"
+          few: "Найдено %{count} записи"
+          many: "Найдено %{count} записей"
+      show:
+        title: "Информация по Gist '%{name}'"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:
@@ -119,3 +136,5 @@ ru:
   controllers:
     question_not_found: "Вопрос не был найден"
     user_denied: "Вы не админ! Низзя!"
+  gist_question_service:
+    description: "Вопрос '%{title}' из сервиса TestGuru"

@@ -23,5 +23,9 @@ module TestguruRailsCourse
 
     config.time_zone = 'Kyiv'
     config.active_record.default_timezone = :utc
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
+
+    Dotenv::Railtie.load
   end
 end

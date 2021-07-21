@@ -56,6 +56,10 @@ en:
         body: "Text"
         is_correct: "Correct?"
         question_id: "Question"
+      gist:
+        question_id: "Question"
+        url: "URL"
+        user_id: "User (email)"
   tests:
     index:
       title: "Test List"
@@ -79,12 +83,16 @@ en:
       title: "Passing test %{title}"
       queries_count: "Question %{current} from %{max}"
       continue: "Next"
+      save_to_gist: "Save to Gist"
     result:
       title: "Test %{title} completed"
       to_tests: "To the list of tests"
       result_passed: "Test passed successfully!"
       result_failed: "Test failed."
       result_percent: "Percentage passed: %{percent}"
+    gist:
+      failure: "Gist not created"
+      success_html: "Gist successfully created %{link}"
   tests_mailer:
     completed_test:
       subject: "You passed the test"
@@ -124,6 +132,15 @@ en:
           one: "Found %{count} record"
           few: "Found %{count} records"
           other: "Found %{count} records"
+    gists:
+      index:
+        title: "Gits"
+        found_count:
+          one: "Found %{count} record"
+          few: "Found %{count} records"
+          other: "Found %{count} records"
+      show:
+        title: ""
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
     button:
@@ -153,3 +170,5 @@ en:
   controllers:
     question_not_found: "The question was not found"
     user_denied: "You are not an admin! Nope!"
+  gist_question_service:
+    description: "A question about '%{title}' from TestGuru"

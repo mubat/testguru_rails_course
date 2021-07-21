@@ -1,0 +1,15 @@
+<% @title = t '.title' %>
+<p><%= t '.found_count', count: @gists.count %></p>
+<table class="table table-striped">
+  <thead class="table-dark">
+  <tr>
+    <th><%= t 'helpers.label.gist.question_id' %></th>
+    <th><%= t 'helpers.label.gist.url' %></th>
+    <th><%= t 'helpers.label.gist.user_id' %></th>
+    <th colspan="2" class="text-center"><%= t 'gists.index.fields.actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @gists %>
+  </tbody>
+</table>
