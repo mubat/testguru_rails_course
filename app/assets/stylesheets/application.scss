@@ -86,3 +86,13 @@ footer .footer-item {
 }
 
 @import 'nav';
+
+.form-control {
+  &.valid {
+    box-shadow: 0 0 11px 2px green;
+  }
+
+  &.invalid {
+    box-shadow: 0 0 11px 2px red;
+  }
+}
