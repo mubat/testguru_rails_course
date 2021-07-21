@@ -15,5 +15,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('utilities/sorting')
-require('utilities/validate_password')
+import 'utilities/sorting'
+import 'utilities/validate_password'
