@@ -183,3 +183,9 @@ en:
       save: "Send"
     create:
       saved_and_sent: "The appeal was accepted. We'll be looking at him soon"
+  feedback_mailer:
+    new_feedback:
+      title: "User left a feedback"
+      user: "User"
+      created_at: "Created at"
+      text: "Body"

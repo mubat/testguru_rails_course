@@ -153,3 +153,9 @@ ru:
       save: "Отправить"
     create:
       saved_and_sent: "Обращение принято. Скоро мы на него глянем"
+  feedback_mailer:
+    new_feedback:
+      title: "Пользователь оставил отзыв"
+      user: "Пользователь"
+      created_at: "Добавлено"
+      text: "Текст"
