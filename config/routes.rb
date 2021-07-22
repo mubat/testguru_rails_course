@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   devise_for :users,
              path_names: { sign_in: :login, sign_out: :logout },
              controllers: {
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
                sessions: 'sessions'
              }
   root 'tests#index'
+  resources :feedbacks, only: %i[new create]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :tests, only: :index do

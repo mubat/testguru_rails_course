@@ -21,6 +21,8 @@ ru:
         level: "Уровень"
       question:
         body: "Текст"
+      feedback:
+        body: "Текст"
       answer:
         body: "Текст"
         is_correct: "Правильный?"
@@ -143,3 +145,9 @@ ru:
   shared:
     errors:
       header: "Обнаружено %{count} ошибок"
+    nav:
+      feedback: "Обратная связь"
+  feedbacks:
+    new:
+      title: "Обратная связь"
+      save: "Отправить"
