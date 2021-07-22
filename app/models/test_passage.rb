@@ -50,6 +50,6 @@ class TestPassage < ApplicationRecord
   end
 
   def bef_update_set_next_question
-    self.current_question = next_question if correct_questions_was < self.correct_questions
+    self.current_question = next_question # if correct_questions_was < self.correct_questions
   end
 end
