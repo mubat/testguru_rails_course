@@ -1,7 +1,10 @@
 <% @title = t '.title' %>
 <%= link_to t('application.button.add'), new_admin_test_path %>
+
+<%= render 'shared/errors', resource: @test %>
+
 <p><%= t '.found_count', count: @tests.count %></p>
-<table class="table table-striped">
+<table class="table table-striped align-middle">
   <thead class="table-dark">
   <tr>
     <th><%= t 'helpers.label.test.category_id' %></th>

@@ -45,3 +45,21 @@
     }
   }
 }
+
+#progress-bar {
+  margin: 10px 20px;
+  height: 20px;
+  border: 1px solid black;
+
+  .step {
+    position: relative;
+    border-right: 1px solid black;
+    height: 100%;
+    float: left;
+    z-index: 99;
+  }
+
+  .passed {
+    background-color: orange;
+  }
+}

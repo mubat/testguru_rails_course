@@ -98,6 +98,8 @@ ru:
           one: "Найдено %{count} запись"
           few: "Найдено %{count} записи"
           many: "Найдено %{count} записей"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         title: "Список всех Gist"
@@ -138,3 +140,6 @@ ru:
     user_denied: "Вы не админ! Низзя!"
   gist_question_service:
     description: "Вопрос '%{title}' из сервиса TestGuru"
+  shared:
+    errors:
+      header: "Обнаружено %{count} ошибок"
