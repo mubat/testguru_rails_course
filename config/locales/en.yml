@@ -181,3 +181,5 @@ en:
     new:
       title: "Feedback"
       save: "Send"
+    create:
+      saved_and_sent: "The appeal was accepted. We'll be looking at him soon"
