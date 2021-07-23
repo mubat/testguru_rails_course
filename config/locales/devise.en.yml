@@ -67,3 +67,7 @@ en:
     tests:
       form_inline:
         submit: "Ok"
+  helpers:
+    label:
+      feedback:
+        body: "Body"

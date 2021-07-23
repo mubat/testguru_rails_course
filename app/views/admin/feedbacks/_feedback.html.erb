@@ -1,0 +1,9 @@
+<tr>
+  <td><%= feedback.body %></td>
+  <td><%= feedback.user.email %></td>
+  <td><%= button_to(t('application.button.detail'), admin_feedback_path(feedback), method: :get) %></td>
+  <td><%= button_to(t('application.button.delete'),
+                    admin_feedback_path(feedback),
+                    data: { :confirm => t('application.confirm_delete') },
+                    method: :delete) %></td>
+</tr>

@@ -5,7 +5,7 @@ class Test < ApplicationRecord
 
   belongs_to :category
   has_many :questions, dependent: :destroy
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
   belongs_to :created_by, class_name: 'User', foreign_key: :created_by_id
 
@@ -13,6 +13,7 @@ class Test < ApplicationRecord
   scope :with_level_low, -> { with_level(LEVEL_LOW) }
   scope :with_level_medium, -> { with_level(LEVEL_MEDIUM) }
   scope :with_level_hard, -> { with_level(LEVEL_HARD) }
+  scope :with_questions, -> { left_outer_joins(:questions).where.not(questions: { id: nil }) }
 
   scope :names_by_category, lambda { |category_name|
     joins(:category).where(category: { title: category_name })

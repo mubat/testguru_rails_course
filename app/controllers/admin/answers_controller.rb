@@ -23,7 +23,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect_to @answer.question
+      redirect_to admin_question_path(@answer.question)
     else
       render :new
     end

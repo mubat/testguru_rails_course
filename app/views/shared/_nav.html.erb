@@ -3,6 +3,7 @@
     <div class="navbar-brand header-item logo"><%= link_to 'TestGuru', root_path %></div>
     <% if user_signed_in? %>
       <div class="navbar-text user"><%= t 'layouts.application.welcome', user: current_user.first_name %></div>
+      <div class="nav-link"><%= link_to t('.feedback'), new_feedback_path %></div>
     <% end %>
     <div id="navbarNav">
       <div class="navbar-nav">

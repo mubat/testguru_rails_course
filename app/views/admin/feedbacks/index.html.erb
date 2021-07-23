@@ -1,0 +1,14 @@
+<% @title = t '.title' %>
+<p><%= t 'admin.gists.index.found_count', count: @feedbacks.count %></p>
+<table class="table table-striped">
+  <thead class="table-dark">
+  <tr>
+    <th><%= t 'helpers.label.feedback.body' %></th>
+    <th><%= t 'helpers.label.feedback.user_id' %></th>
+    <th colspan="2" class="text-center"><%= t 'tests.index.fields.actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @feedbacks %>
+  </tbody>
+</table>
