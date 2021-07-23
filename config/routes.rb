@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: %i[index show destroy]
+    resources :feedbacks, only: %i[index show destroy]
 
     resources :tests do
       patch :update_inline, on: :member

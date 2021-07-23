@@ -1,0 +1,24 @@
+<% @title = t '.title', name: @feedback.user.email %>
+<%= link_to '<< ' + t('application.button.back'), admin_gists_path %>
+<table>
+  <tr>
+    <td><%= t('application.fields.detail_view.name') %></td>
+    <td><%= t('application.fields.detail_view.value') %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.feedback.body') %></td>
+    <td><%= @feedback.body %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.gist.user_id') %></td>
+    <td><%= @feedback.user.email %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.created_at') %></td>
+    <td><%= @feedback.created_at %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.updated_at') %></td>
+    <td><%= @feedback.updated_at %></td>
+  </tr>
+</table>

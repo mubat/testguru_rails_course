@@ -23,6 +23,7 @@ ru:
         body: "Текст"
       feedback:
         body: "Текст"
+        user_id: "Пользователь"
       answer:
         body: "Текст"
         is_correct: "Правильный?"
@@ -80,6 +81,7 @@ ru:
   admin:
     nav:
       admin_panel: "Панель администратора"
+      feedbacks: "Запросы Обратной связи"
     answers:
       edit:
         title: "Изменение ответа %{name}"
@@ -111,6 +113,11 @@ ru:
           many: "Найдено %{count} записей"
       show:
         title: "Информация по Gist '%{name}'"
+    feedbacks:
+      index:
+        title: "Запросы обратной связи"
+      show:
+        title: "Обратная связь от %{name}"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:

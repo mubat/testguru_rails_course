@@ -60,6 +60,8 @@ en:
         question_id: "Question"
         url: "URL"
         user_id: "User (email)"
+      feedback:
+        user_id: "User"
   tests:
     index:
       title: "Test List"
@@ -112,6 +114,7 @@ en:
   admin:
     nav:
       admin_panel: "Admin Panel"
+      feedbacks: "Feedback requests"
     answers:
       edit:
         title: "Change answer %{name}"
@@ -141,6 +144,9 @@ en:
           other: "Found %{count} records"
       show:
         title: ""
+    feedbacks:
+      index:
+        title: "Feedback requests"
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
     button:
@@ -185,7 +191,7 @@ en:
       saved_and_sent: "The appeal was accepted. We'll be looking at him soon"
   feedback_mailer:
     new_feedback:
-      title: "User left a feedback"
+      title: "User left a feedbacks"
       user: "User"
       created_at: "Created at"
       text: "Body"
