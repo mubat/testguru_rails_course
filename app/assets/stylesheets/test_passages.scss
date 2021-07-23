@@ -47,13 +47,14 @@
 }
 
 #progress-bar {
-  margin: 10px 20px;
+  margin: 10px 0;
   height: 20px;
   border: 1px solid black;
 
   .step {
     position: relative;
     border-right: 1px solid black;
+    //margin-right: -1px;
     height: 100%;
     float: left;
     z-index: 99;
