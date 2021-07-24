@@ -1,0 +1,17 @@
+<% @title = t('.title') %>
+<%= link_to t('application.button.add'), new_admin_test_path %>
+
+<p><%= t 'application.found_count', count: @badges.count %></p>
+<table class="table table-striped align-middle">
+  <thead class="table-dark">
+  <tr>
+    <th><%= t 'helpers.label.badge.name' %></th>
+    <th><%= t 'helpers.label.badge.rule' %></th>
+    <th><%= t 'helpers.label.badge.filename' %></th>
+    <th colspan="2" class="text-center"><%= t 'tests.index.fields.actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>

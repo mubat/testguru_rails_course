@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges, only: %i[index new create show destroy]
     resources :gists, only: %i[index show destroy]
     resources :feedbacks, only: %i[index show destroy]
 

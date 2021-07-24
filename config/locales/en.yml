@@ -147,6 +147,11 @@ en:
     feedbacks:
       index:
         title: "Feedback requests"
+    badges:
+      new:
+        title: "Create new Badge"
+      index:
+        title: "Badges"
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
     button:

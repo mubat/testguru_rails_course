@@ -1,0 +1,23 @@
+<%= render 'shared/errors', resource: resource %>
+
+<div class="row">
+  <div class="col col-md-6">
+    <%= form_with model: [:admin, resource] do |f| %>
+      <div class="form-group">
+        <p>
+          <%= f.label :name %><br/>
+          <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :filename %><br/>
+          <%= f.text_field :filename, class: 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :rule %><br/>
+          <%= f.number_field :rule, class: 'form-control' %>
+        </p>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

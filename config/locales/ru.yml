@@ -32,6 +32,10 @@ ru:
         question_id: "Вопрос"
         url: "URL"
         user_id: "Пользователь (email)"
+      badge:
+        name: "Название"
+        filename: "Иконка"
+        rule: "Правило"
   tests:
     index:
       title: "Список тестов"
@@ -118,6 +122,11 @@ ru:
         title: "Запросы обратной связи"
       show:
         title: "Обратная связь от %{name}"
+    badges:
+      new:
+        title: "Добавить новый Бэйдж"
+      index:
+        title: "Бэйджи"
   application:
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:
