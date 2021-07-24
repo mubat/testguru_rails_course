@@ -1,6 +1,6 @@
 class Badges::BadgeFirstAttempt < Badges::BadgeBase
-  def rule
-    TestPassage.find_by(user: @test_passage.user, test: @test_passage.test).nil?
+  def valid
+    @test_passage.user.tests.where(id: @test_passage.test.id).count == 1 && @test_passage.passed?
   end
 
   def self.title

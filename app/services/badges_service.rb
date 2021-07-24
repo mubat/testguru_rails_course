@@ -4,7 +4,10 @@ class BadgesService
   ].freeze
 
   def self.reward(test_passage)
-    # TODO
+    RULES.each_with_index do |rule, index|
+      rule_instance = rule.new(test_passage)
+      test_passage.user.badges << Badge.find_by(rule: index) if rule_instance.valid
+    end
   end
 
   def self.list

@@ -2,11 +2,10 @@ class Badges::BadgeBase
 
   def initialize(test_passage)
     @test_passage = test_passage
-    self.class.title = 'base'
   end
 
-  def rule
-    raise 'Error! Implement rule check in nested badge'
+  def valid
+    raise 'Error! Implement rule `valid` in nested badge'
   end
 
   def self.title
