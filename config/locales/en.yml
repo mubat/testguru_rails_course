@@ -62,13 +62,13 @@ en:
         user_id: "User (email)"
       feedback:
         user_id: "User"
+      badge:
+        name: "Name"
+        rule: "Rule"
+        filename: "Filename"
   tests:
     index:
       title: "Test List"
-      found_count:
-        one: "Found %{count} record"
-        few: "Found %{count} records"
-        other: "Found %{count} records"
       fields:
         category: "Category"
         title: "Title"
@@ -131,17 +131,9 @@ en:
         question_name: "Question"
       index:
         title: "Test List"
-        found_count:
-          one: "Found %{count} record"
-          few: "Found %{count} records"
-          other: "Found %{count} records"
     gists:
       index:
         title: "Gits"
-        found_count:
-          one: "Found %{count} record"
-          few: "Found %{count} records"
-          other: "Found %{count} records"
       show:
         title: ""
     feedbacks:
@@ -152,8 +144,14 @@ en:
         title: "Create new Badge"
       index:
         title: "Badges"
+      show:
+        title: "Badge '%{name}'"
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
+    found_count:
+      one: "Found %{count} record"
+      few: "Found %{count} records"
+      other: "Found %{count} records"
     button:
       add: "Add"
       detail: "Details"

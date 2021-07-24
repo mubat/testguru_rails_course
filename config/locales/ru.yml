@@ -39,10 +39,6 @@ ru:
   tests:
     index:
       title: "Список тестов"
-      found_count:
-        one: "Найдено %{count} запись"
-        few: "Найдено %{count} записи"
-        many: "Найдено %{count} записей"
       fields:
         actions: "Действия"
     test:
@@ -102,19 +98,11 @@ ru:
         question_name: "Вопрос"
       index:
         title: "Список тестов"
-        found_count:
-          one: "Найдено %{count} запись"
-          few: "Найдено %{count} записи"
-          many: "Найдено %{count} записей"
       form_inline:
         submit: "ОК"
     gists:
       index:
         title: "Список всех Gist"
-        found_count:
-          one: "Найдено %{count} запись"
-          few: "Найдено %{count} записи"
-          many: "Найдено %{count} записей"
       show:
         title: "Информация по Gist '%{name}'"
     feedbacks:
@@ -127,7 +115,13 @@ ru:
         title: "Добавить новый Бэйдж"
       index:
         title: "Бэйджи"
+      show:
+        title: "Бэйдж '%{name}'"
   application:
+    found_count:
+      one: "Найдена %{count} запись"
+      few: "Найдено %{count} записи"
+      many: "Найдено %{count} записей"
     confirm_delete: "Вы действительно хотите удалить запись?"
     button:
       add: "Добавить"
