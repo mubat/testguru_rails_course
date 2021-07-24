@@ -202,5 +202,6 @@ en:
   badges:
     name:
       first_attempt: "With first try"
+      category_completed: "Completed all tests in Category"
 
 

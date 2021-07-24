@@ -1,6 +1,7 @@
 class BadgesService
   RULES = [
-    Badges::BadgeFirstAttempt
+    Badges::BadgeFirstAttempt,
+    Badges::BadgeCategory
   ].freeze
 
   attr_reader :badges
