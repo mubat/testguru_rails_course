@@ -198,3 +198,6 @@ en:
       user: "User"
       created_at: "Created at"
       text: "Body"
+  badges:
+    name:
+      first_attempt: "With first try"

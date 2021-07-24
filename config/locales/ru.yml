@@ -169,3 +169,6 @@ ru:
       user: "Пользователь"
       created_at: "Добавлено"
       text: "Текст"
+  badges:
+    name:
+      first_attempt: "С первой попытки"
