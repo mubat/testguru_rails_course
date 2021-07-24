@@ -1,4 +1,4 @@
-class Badges::BadgeCategory < Badges::BadgeBase
+class Rules::RuleCategory < Rules::RuleBase
   def valid
     all_test_passages = @test_passage.user.test_passages
                                      .where(test_id: Test.where(category: @test_passage.test.category))

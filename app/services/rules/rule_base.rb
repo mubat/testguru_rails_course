@@ -1,4 +1,4 @@
-class Badges::BadgeBase
+class Rules::RuleBase
 
   def initialize(test_passage)
     @test_passage = test_passage

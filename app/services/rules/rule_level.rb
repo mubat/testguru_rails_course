@@ -1,4 +1,4 @@
-class Badges::BadgeLevel < Badges::BadgeBase
+class Rules::RuleLevel < Rules::RuleBase
   def valid
     all_test_passages = @test_passage.user.test_passages.where(test_id: Test.where(level: @test_passage.test.level))
     all_test_passages.each { |test_passage| return false unless test_passage.passed? }
