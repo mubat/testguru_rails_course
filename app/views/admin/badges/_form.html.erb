@@ -13,7 +13,7 @@
           <% BadgeHelper::ICONS.each_with_index do |icon, i| %>
             <div class="form-check badge-icon">
               <%= f.radio_button(:filename, i, class: 'form-check-input') %>
-              <%= image_tag(icon) %>
+              <%= image_tag(icon, class: 'badge-icon') %>
             </div>
           <% end %>
         </div>
