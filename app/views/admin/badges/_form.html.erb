@@ -19,7 +19,7 @@
         </div>
         <div>
           <%= f.label :rule %><br/>
-          <%= f.number_field :rule, class: 'form-control' %>
+          <%= f.select :rule, BadgesService.list, class: 'form-control', include_blank: true %>
         </div>
         <%= f.submit %>
       </div>
