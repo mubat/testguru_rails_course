@@ -115,6 +115,7 @@ en:
     nav:
       admin_panel: "Admin Panel"
       feedbacks: "Feedback requests"
+      badges: "Badges"
     answers:
       edit:
         title: "Change answer %{name}"

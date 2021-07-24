@@ -82,6 +82,7 @@ ru:
     nav:
       admin_panel: "Панель администратора"
       feedbacks: "Запросы Обратной связи"
+      badges: "Бэйджи"
     answers:
       edit:
         title: "Изменение ответа %{name}"
