@@ -1,6 +1,7 @@
 class BadgesService
   RULES = [
     Badges::BadgeFirstAttempt,
+    Badges::BadgeLevel,
     Badges::BadgeCategory
   ].freeze
 
