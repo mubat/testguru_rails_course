@@ -204,5 +204,7 @@ en:
     name:
       first_attempt: "With first try"
       category_completed: "Completed all tests in Category"
+    index:
+      title: "User Badges"
 
 

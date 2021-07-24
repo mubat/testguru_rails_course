@@ -1,0 +1,11 @@
+<% @title = t('.title') %>
+<%= link_to t('application.button.back'), root_path %>
+
+<table class="table table-striped align-middle">
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= badge.name %></td>
+      <td><%= image(badge.filename) %></td>
+    </tr>
+  <% end %>
+</table>
