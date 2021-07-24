@@ -179,6 +179,7 @@ en:
   controllers:
     question_not_found: "The question was not found"
     user_denied: "You are not an admin! Nope!"
+    achievement_got_html: "Got Achievement: \"%{name}\""
   gist_question_service:
     description: "A question about '%{title}' from TestGuru"
   shared:
@@ -201,3 +202,5 @@ en:
   badges:
     name:
       first_attempt: "With first try"
+
+

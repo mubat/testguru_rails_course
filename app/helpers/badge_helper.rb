@@ -6,6 +6,6 @@ module BadgeHelper
   end
 
   def image(id)
-    image_tag(filename(id))
+    image_tag(filename(id), class: 'badge-icon')
   end
 end

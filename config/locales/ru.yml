@@ -150,6 +150,7 @@ ru:
   controllers:
     question_not_found: "Вопрос не был найден"
     user_denied: "Вы не админ! Низзя!"
+    achievement_got_html: "Получено достижение \"%{name}\""
   gist_question_service:
     description: "Вопрос '%{title}' из сервиса TestGuru"
   shared:
@@ -172,3 +173,4 @@ ru:
   badges:
     name:
       first_attempt: "С первой попытки"
+

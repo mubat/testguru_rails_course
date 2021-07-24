@@ -3,11 +3,27 @@ class BadgesService
     Badges::BadgeFirstAttempt
   ].freeze
 
-  def self.reward(test_passage)
+  attr_reader :badges
+
+  def initialize(test_passage)
+    @test_passage = test_passage
+    @badges = []
+    @notifications = []
+  end
+
+  def find
     RULES.each_with_index do |rule, index|
-      rule_instance = rule.new(test_passage)
-      test_passage.user.badges << Badge.find_by(rule: index) if rule_instance.valid
+      rule_instance = rule.new(@test_passage)
+      next unless rule_instance.valid
+
+      @badges += Badge.where(rule: index).to_a
     end
+    self
+  end
+
+  def reward
+    @test_passage.user.badges << @badges
+    self
   end
 
   def self.list
