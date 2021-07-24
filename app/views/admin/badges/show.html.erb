@@ -14,11 +14,11 @@
   </tr>
   <tr>
     <td><%= t('helpers.label.badge.rule') %></td>
-    <td><%= @badge.rule %></td>
+    <td><%= BadgesService.title_by_id(@badge.rule) %></td>
   </tr>
   <tr>
     <td><%= t('helpers.label.badge.filename') %></td>
-    <td><%= @badge.filename %></td>
+    <td><%= image(@badge.filename) %></td>
   </tr>
   <tr>
     <td><%= t('application.fields.created_at') %></td>
