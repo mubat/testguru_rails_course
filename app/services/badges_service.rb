@@ -14,11 +14,11 @@ class BadgesService
   end
 
   def find
-    RULES.each_with_index do |rule, index|
+    RULES.each do |rule|
       rule_instance = rule.new(@test_passage)
       next unless rule_instance.passed?
 
-      @badges += Badge.where(rule: index).to_a
+      @badges += Badge.find_by(rule: rule.name)
     end
     self
   end
