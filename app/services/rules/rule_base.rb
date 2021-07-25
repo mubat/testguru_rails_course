@@ -1,10 +1,6 @@
 class Rules::RuleBase
 
-  def initialize(test_passage)
-    @test_passage = test_passage
-  end
-
-  def passed?
+  def self.passed?
     raise 'Error! Implement rule `valid` in nested badge'
   end
 

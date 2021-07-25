@@ -19,11 +19,8 @@ class BadgesService
   end
 
   def find
-    RULES.each do |rule|
-      rule_instance = rule.new(@test_passage)
-      next unless rule_instance.passed?
-
-      @badges += Badge.find_by(rule: rule.name)
+    Badge.all.each do |badge|
+      @badges << badge if badge.rule.constantize.send(:passed?, @test_passage)
     end
   end
 
