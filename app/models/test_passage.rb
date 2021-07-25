@@ -7,6 +7,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :bef_val_set_first_question, on: :create
   before_update :bef_update_set_next_question
+  before_update :bef_update_set_passed_percent # set only if test completed
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -18,7 +19,7 @@ class TestPassage < ApplicationRecord
   end
 
   def percent_of_correct
-    correct_questions.to_f / test.questions.count.to_f * 100.0
+    correct_questions.to_f / test.questions.count * 100.0
   end
 
   def passed?
@@ -51,5 +52,9 @@ class TestPassage < ApplicationRecord
 
   def bef_update_set_next_question
     self.current_question = next_question # if correct_questions_was < self.correct_questions
+  end
+
+  def bef_update_set_passed_percent
+    self.passed_percent = percent_of_correct if completed?
   end
 end
