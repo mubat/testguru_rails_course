@@ -16,7 +16,7 @@ class BadgesService
   def find
     RULES.each_with_index do |rule, index|
       rule_instance = rule.new(@test_passage)
-      next unless rule_instance.valid
+      next unless rule_instance.passed?
 
       @badges += Badge.where(rule: index).to_a
     end

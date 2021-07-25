@@ -4,7 +4,7 @@ class Rules::RuleBase
     @test_passage = test_passage
   end
 
-  def valid
+  def passed?
     raise 'Error! Implement rule `valid` in nested badge'
   end
 
