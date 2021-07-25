@@ -175,6 +175,7 @@ ru:
     name:
       first_attempt: "С первой попытки"
       category_completed: "Пройдены все тесты в Разделе"
+      level_completed: "пройдены все тесты определённого уровня"
     index:
       title: "Бэйджи пользователя"
 

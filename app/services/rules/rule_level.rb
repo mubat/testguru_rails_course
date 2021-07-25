@@ -6,6 +6,6 @@ class Rules::RuleLevel < Rules::RuleBase
   end
 
   def self.title
-    I18n.t('badges.name.category_completed')
+    I18n.t('badges.name.level_completed')
   end
 end
