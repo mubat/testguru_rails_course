@@ -13,6 +13,11 @@ class BadgesService
     @notifications = []
   end
 
+  def process
+    find
+    reward
+  end
+
   def find
     RULES.each do |rule|
       rule_instance = rule.new(@test_passage)
@@ -20,12 +25,10 @@ class BadgesService
 
       @badges += Badge.find_by(rule: rule.name)
     end
-    self
   end
 
   def reward
     @test_passage.user.badges << @badges
-    self
   end
 
   def self.list
