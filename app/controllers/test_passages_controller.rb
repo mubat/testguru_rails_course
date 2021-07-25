@@ -1,6 +1,4 @@
 class TestPassagesController < ApplicationController
-  include BadgeHelper
-  include ActionView::Helpers::AssetTagHelper
 
   before_action :set_test_passage, only: %i[show result update gist]
 
