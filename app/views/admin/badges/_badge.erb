@@ -1,6 +1,6 @@
 <tr>
   <td><%= badge.name %></td>
-  <td><%= BadgesService.title_by_id(badge.rule) %></td>
+  <td><%= BadgesService.rule_title(badge.rule) %></td>
   <td><%= image(badge.filename) %></td>
   <td><%= button_to(t('application.button.detail'), admin_badge_path(badge), method: :get) %></td>
   <td><%= button_to(t('application.button.delete'),

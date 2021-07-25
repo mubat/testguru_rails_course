@@ -19,7 +19,7 @@
         </div>
         <div>
           <%= f.label :rule %><br/>
-          <%= f.select :rule, BadgesService.list, class: 'form-control', include_blank: true %>
+          <%= f.select :rule, BadgesService.list.invert, class: 'form-control', include_blank: true %>
         </div>
         <%= f.submit %>
       </div>

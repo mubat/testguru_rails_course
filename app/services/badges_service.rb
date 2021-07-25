@@ -1,8 +1,8 @@
 class BadgesService
   RULES = [
     Rules::RuleFirstAttempt,
-    Rules::RuleLevel,
-    Rules::RuleCategory
+    Rules::RuleCategory,
+    Rules::RuleLevel
   ].freeze
 
   attr_reader :badges
@@ -29,14 +29,13 @@ class BadgesService
   end
 
   def self.list
-    list = []
-    RULES.each_with_index do |badge_class, i|
-      list[i] = badge_class.title
-    end
+    list = {}
+    RULES.each { |badge_class| list[badge_class.name] = badge_class.title }
     list
   end
 
-  def self.title_by_id(id)
-    RULES[id].title
+  def self.rule_title(rule)
+    rule = rule.constantize if rule.is_a?(String)
+    rule.title
   end
 end
