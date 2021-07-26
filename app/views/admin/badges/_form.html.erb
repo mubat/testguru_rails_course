@@ -1,0 +1,28 @@
+<%= render 'shared/errors', resource: resource %>
+
+<div class="row">
+  <div class="col col-md-6">
+    <%= form_with model: [:admin, resource] do |f| %>
+      <div class="form-group">
+        <div>
+          <%= f.label :name %><br/>
+          <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        </div>
+        <div>
+          <%= f.label :filename %><br/>
+          <% BadgeHelper::ICONS.each_with_index do |icon, i| %>
+            <div class="form-check badge-icon">
+              <%= f.radio_button(:filename, i, class: 'form-check-input') %>
+              <%= image_tag(icon, class: 'badge-icon') %>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <%= f.label :rule %><br/>
+          <%= f.select :rule, BadgesService.list.invert, class: 'form-control', include_blank: true %>
+        </div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

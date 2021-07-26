@@ -62,13 +62,13 @@ en:
         user_id: "User (email)"
       feedback:
         user_id: "User"
+      badge:
+        name: "Name"
+        rule: "Rule"
+        filename: "Filename"
   tests:
     index:
       title: "Test List"
-      found_count:
-        one: "Found %{count} record"
-        few: "Found %{count} records"
-        other: "Found %{count} records"
       fields:
         category: "Category"
         title: "Title"
@@ -115,6 +115,7 @@ en:
     nav:
       admin_panel: "Admin Panel"
       feedbacks: "Feedback requests"
+      badges: "Badges"
     answers:
       edit:
         title: "Change answer %{name}"
@@ -131,24 +132,27 @@ en:
         question_name: "Question"
       index:
         title: "Test List"
-        found_count:
-          one: "Found %{count} record"
-          few: "Found %{count} records"
-          other: "Found %{count} records"
     gists:
       index:
         title: "Gits"
-        found_count:
-          one: "Found %{count} record"
-          few: "Found %{count} records"
-          other: "Found %{count} records"
       show:
         title: ""
     feedbacks:
       index:
         title: "Feedback requests"
+    badges:
+      new:
+        title: "Create new Badge"
+      index:
+        title: "Badges"
+      show:
+        title: "Badge '%{name}'"
   application:
     confirm_delete: "Are you sure you want to delete the entry?"
+    found_count:
+      one: "Found %{count} record"
+      few: "Found %{count} records"
+      other: "Found %{count} records"
     button:
       add: "Add"
       detail: "Details"
@@ -176,6 +180,7 @@ en:
   controllers:
     question_not_found: "The question was not found"
     user_denied: "You are not an admin! Nope!"
+    achievement_got_html: "Got Achievement: \"%{name}\""
   gist_question_service:
     description: "A question about '%{title}' from TestGuru"
   shared:
@@ -195,3 +200,12 @@ en:
       user: "User"
       created_at: "Created at"
       text: "Body"
+  badges:
+    name:
+      first_attempt: "With first try"
+      category_completed: "Completed all tests in Category"
+      level_completed: "passed all tests by level"
+    index:
+      title: "User Badges"
+
+

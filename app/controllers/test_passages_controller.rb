@@ -11,6 +11,9 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+      service = BadgesService.new(@test_passage)
+      service.process
+      register_flashes(service.badges)
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -33,5 +36,12 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def register_flashes(badges)
+    badges.each do |badge|
+      guru_flash I18n.t('controllers.achievement_got_html', name: badge.name),
+                 type: :achievement
+    end
   end
 end

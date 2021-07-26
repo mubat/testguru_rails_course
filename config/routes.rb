@@ -10,6 +10,7 @@ Rails.application.routes.draw do
              }
   root 'tests#index'
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: :index
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :tests, only: :index do
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges, only: %i[index new create show destroy]
     resources :gists, only: %i[index show destroy]
     resources :feedbacks, only: %i[index show destroy]
 

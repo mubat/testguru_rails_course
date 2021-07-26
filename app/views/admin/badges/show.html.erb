@@ -1,0 +1,32 @@
+<% @title = t '.title', name: @badge.name %>
+<%= link_to '<< ' + t('application.button.back'), admin_badges_path %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= t('application.fields.detail_view.name') %></th>
+    <th><%= t('application.fields.detail_view.value') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= t('helpers.label.badge.name') %></td>
+    <td><%= @badge.name %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.badge.rule') %></td>
+    <td><%= BadgesService.rule_title(@badge.rule) %></td>
+  </tr>
+  <tr>
+    <td><%= t('helpers.label.badge.filename') %></td>
+    <td><%= image(@badge.filename) %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.created_at') %></td>
+    <td><%= @badge.created_at %></td>
+  </tr>
+  <tr>
+    <td><%= t('application.fields.updated_at') %></td>
+    <td><%= @badge.updated_at %></td>
+  </tr>
+  </tbody>
+</table>
