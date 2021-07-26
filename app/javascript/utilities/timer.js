@@ -6,6 +6,8 @@ document.addEventListener('turbolinks:load', function () {
 function Timer(element) {
     this.element = element;
     this.expiredTime = element.data('time-end') * 1000;
+    this.endTimeRedirectUrl = element.data('redirect');
+    this.endTimeRedirectMethod = element.data('redirect-method');
     let self = this;
 
     this.interval = setInterval(function () {
@@ -25,4 +27,10 @@ Timer.prototype.updateTime = function () {
 }
 Timer.prototype.stop = function () {
     clearInterval(this.interval);
+    if (this.endTimeRedirectUrl) {
+        let hiddenForm = $('form');
+        hiddenForm.url = this.endTimeRedirectUrl;
+        hiddenForm.method = this.endTimeRedirectMethod || 'get';
+        hiddenForm.submit();
+    }
 }

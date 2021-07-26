@@ -8,7 +8,10 @@
   <div class="col-md-6 col-sm-12"><%= t '.queries_count', current: @test_passage.current_position, max: @test_passage.test.questions.count %></div>
   <% if @test_passage.test.timer %>
     <div class="col-md-6 col-sm-12">
-      <%= tag :div, id: 'timer', class: 'float-end me-4', data: { 'time-end': Time.now.to_i + 10 } %> <!-- + 10 чисто для тестов. TODO удалить потом -->
+      <%= tag :div, id: 'timer', class: 'float-end me-4',
+              data: { 'time-end': @test_passage.expired_at.to_i,
+                      redirect: test_passage_path(@test_passage),
+                      'redirect-method': :post } %>
     </div>
   <% end %>
 </div>
