@@ -4,8 +4,22 @@
   <b><%= @test_passage.current_question.body %></b>
 </p>
 
-<p><%= t '.queries_count', current: @test_passage.current_position, max: @test_passage.test.questions.count %></p>
-<div id="progress-bar" data-current="<%= @test_passage.current_position %>" data-max="<%= @test_passage.test.questions.count %>"></div>
+<div class="row">
+  <div class="col-md-6 col-sm-12"><%= t '.queries_count', current: @test_passage.current_position, max: @test_passage.test.questions.count %></div>
+  <% if @test_passage.test.timer %>
+    <div class="col-md-6 col-sm-12">
+      <%= tag :div, id: 'timer', class: 'float-end me-4',
+              data: { 'time-end': @test_passage.expired_at.to_i,
+                      redirect: test_passage_path(@test_passage),
+                      'redirect-method': :post } %>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div id="progress-bar" data-current="<%= @test_passage.current_position %>" data-max="<%= @test_passage.test.questions.count %>"></div>
+  </div>
+</div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>

@@ -18,6 +18,18 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def complete
+    self.current_question = nil
+  end
+
+  def expired_at
+    test.timer.nil? ? 10.years.from_now : created_at + test.timer * 60
+  end
+
+  def expired?
+    test.timer.nil? ? false : Time.current > expired_at
+  end
+
   def percent_of_correct
     correct_questions.to_f / test.questions.count * 100.0
   end

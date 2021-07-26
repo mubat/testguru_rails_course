@@ -19,6 +19,7 @@ ru:
         title: "Заголовок"
         category_id: "Раздел"
         level: "Уровень"
+        timer: "Время выполнения (в минутах)"
       question:
         body: "Текст"
       feedback:

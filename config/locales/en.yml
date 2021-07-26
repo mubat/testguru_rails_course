@@ -50,6 +50,7 @@ en:
         title: "Title"
         category_id: "Section"
         level: "Level"
+        timer: "Time to pass (in minutes)"
       question:
         body: "Text"
       answer:
